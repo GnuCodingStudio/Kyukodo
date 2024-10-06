@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwfiiofq3u5fg"]
+
+[ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
+[ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
+[ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
+
+[node name="DebugPlanet" type="Node2D"]
+script = ExtResource("1_ubl6c")
+
+[node name="Player" parent="." instance=ExtResource("2_1hvpw")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Inventory" parent="Player/Camera2D" instance=ExtResource("3_wb340")]
+visible = false
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
