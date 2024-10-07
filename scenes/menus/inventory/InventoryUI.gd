@@ -2,10 +2,16 @@ class_name InventoryUI
 extends Control
 
 
+@onready var items_grid: GridContainer = %ItemsGrid
+
+const ITEM_UI = preload("res://scenes/menus/inventory/ItemUI.tscn")
+
+
 ## BUILT-IN ##
 
 func _ready() -> void:
 	InventoryStorage.inventory_changed.connect(_inventory_changed)
+	_inventory_changed()
 
 
 func _process(delta: float) -> void:
@@ -20,4 +26,10 @@ func _input(event: InputEvent) -> void:
 ## SIGNAL ##
 
 func _inventory_changed() -> void:
-	pass
+	for child in items_grid.get_children():
+		items_grid.remove_child(child)
+
+	for item in InventoryStorage.items:
+		var itemUI = ITEM_UI.instantiate()
+		items_grid.add_child(itemUI)
+		itemUI.set_item(item)

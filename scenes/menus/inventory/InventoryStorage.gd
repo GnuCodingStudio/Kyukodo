@@ -6,7 +6,7 @@ signal inventory_changed
 
 
 func _ready() -> void:
-	items.resize(10)
+	items.resize(30)
 
 
 func add_item(new_item: ItemData):
@@ -25,6 +25,9 @@ func add_item(new_item: ItemData):
 			if items[i] == null:
 				found = true
 				items[i] = new_item
+				break
 
 	if not found:
 		items.append(new_item)
+
+	inventory_changed.emit()

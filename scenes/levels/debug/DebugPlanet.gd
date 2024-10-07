@@ -6,5 +6,6 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.keycode == KEY_KP_ADD and event.is_released() :
-		InventoryStorage.add_item(ItemData.new("APPLE", "Apple", 1))
+	if event is InputEventKey and event.keycode == KEY_KP_ADD and event.is_released():
+		prints("adding item")
+		InventoryStorage.add_item(ItemData.new("PUMPKIN", "Pumpkin", 1))

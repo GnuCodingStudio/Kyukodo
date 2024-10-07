@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbaruof5d543l"]
+
+[ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/inventory/ui_tilemap.png" id="1_vqih8"]
+[ext_resource type="Script" path="res://scenes/menus/inventory/ItemUI.gd" id="1_yn632"]
+[ext_resource type="Texture2D" uid="uid://bgg8ecti875aw" path="res://objects/pumpkin/pumpkin.png" id="2_ttx75"]
+
+[node name="ItemUi" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1856.0
+offset_bottom = -1016.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yn632")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vqih8")
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="Data" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImageTexture" type="TextureRect" parent="Data"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ttx75")
+
+[node name="QuantityLabel" type="Label" parent="Data"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 53.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "0
+"
