@@ -43,10 +43,6 @@ folder_colors={
 "res://services/": "green"
 }
 
-[gui]
-
-theme/custom="res://resources/theme/MenuTheme.tres"
-
 [input]
 
 move_up={
