@@ -12,3 +12,5 @@ CONSOLE_INPUT_SUBMIT,Submit,Envoyer
 CREDITS_TAGLINE,Credits,Crédits
 CREDITS_TITLE_N_AUTHOR,[b]{title}[/b] by [b]{author}[/b],[b]{title}[/b] par [b]{author}[/b]
 CREDITS_BACK_BUTTON,BACK,RETOUR
+ITEM_USE_BUTTON,Use,Utiliser
+ITEM_DROP_BUTTON,Drop,Jeter

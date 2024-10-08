@@ -33,3 +33,8 @@ func _inventory_changed() -> void:
 		var itemUI = ITEM_UI.instantiate()
 		items_grid.add_child(itemUI)
 		itemUI.set_item(item)
+		itemUI.item_drop.connect(_on_item_drop)
+
+
+func _on_item_drop(item: ItemData) -> void:
+	InventoryStorage.drop_item(item)

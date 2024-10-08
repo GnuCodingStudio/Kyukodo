@@ -2,7 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/inventory/ui_tilemap.png" id="1_vqih8"]
 [ext_resource type="Script" path="res://scenes/menus/inventory/ItemUI.gd" id="1_yn632"]
-[ext_resource type="Texture2D" uid="uid://bgg8ecti875aw" path="res://objects/pumpkin/pumpkin.png" id="2_ttx75"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlscq"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="ItemUi" type="Control"]
 custom_minimum_size = Vector2(64, 64)
@@ -35,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ImageTexture" type="TextureRect" parent="Data"]
 unique_name_in_owner = true
@@ -44,13 +50,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = 9.0
+offset_left = -14.5
+offset_top = -14.5
+offset_right = 14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ttx75")
 
 [node name="QuantityLabel" type="Label" parent="Data"]
 unique_name_in_owner = true
@@ -63,3 +68,44 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "0
 "
+
+[node name="SecondActions" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.078
+anchor_bottom = -0.078
+offset_top = -74.008
+offset_right = 178.0
+offset_bottom = -0.0079999
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hlscq")
+
+[node name="Margin" type="MarginContainer" parent="SecondActions"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="SecondActions/Margin"]
+layout_mode = 2
+size_flags_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="UseButton" type="Button" parent="SecondActions/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 1
+text = "ITEM_USE_BUTTON"
+alignment = 0
+
+[node name="DropButton" type="Button" parent="SecondActions/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 1
+text = "ITEM_DROP_BUTTON"
+alignment = 0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_exited" from="SecondActions" to="." method="_on_second_actions_mouse_exited"]
+[connection signal="pressed" from="SecondActions/Margin/VBox/DropButton" to="." method="_on_drop_button_pressed"]

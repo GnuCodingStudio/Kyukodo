@@ -16,7 +16,7 @@ func add_item(new_item: ItemData):
 		var slot = items[i]
 		if slot != null && slot.code == new_item.code:
 			found = true
-			var updated_item = ItemData.new(slot.code, slot.title, slot.quantity + new_item.quantity)
+			var updated_item = slot.withAddedQuantity(new_item.quantity)
 			items[i] = updated_item
 			break
 
@@ -30,4 +30,11 @@ func add_item(new_item: ItemData):
 	if not found:
 		items.append(new_item)
 
+	inventory_changed.emit()
+
+
+func drop_item(item: ItemData) -> void:
+	for i in items.size():
+		if items[i] != null and items[i].code == item.code:
+			items[i] = null
 	inventory_changed.emit()
