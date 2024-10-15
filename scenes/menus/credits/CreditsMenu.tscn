@@ -82,6 +82,14 @@ author = "Gnu Coding Studio"
 link = "https://github.com/GnuCodingStudio/"
 link_text = "github.com / GnuCodingStudio"
 
+[node name="CreditsItem02" parent="GlobalMargin/VBox/Scroll/List" instance=ExtResource("1_gd18q")]
+layout_mode = 2
+size_flags_horizontal = 1
+title = "Character Sprites - Fantasy Dreamland"
+author = "elvgames"
+link = "https://elvgames.itch.io/free-retro-game-world-sprites"
+link_text = "itch.io / free-retro-game-world-sprites"
+
 [node name="BackButton" type="Button" parent="GlobalMargin"]
 layout_mode = 2
 size_flags_horizontal = 8
