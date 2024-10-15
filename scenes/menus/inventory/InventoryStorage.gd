@@ -14,7 +14,7 @@ func add_item(new_item: ItemData):
 
 	for i in items.size():
 		var slot = items[i]
-		if slot != null && slot.code == new_item.code:
+		if slot != null && slot.ref.code == new_item.ref.code:
 			found = true
 			var updated_item = slot.withAddedQuantity(new_item.quantity)
 			items[i] = updated_item

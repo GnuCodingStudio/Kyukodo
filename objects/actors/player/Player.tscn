@@ -285,6 +285,7 @@ position = Vector2(0, -3)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_67jtf")
 animation = &"IdleDown"
+autoplay = "IdleDown"
 speed_scale = 1.2
 
 [node name="CollisionShape" parent="." index="1"]

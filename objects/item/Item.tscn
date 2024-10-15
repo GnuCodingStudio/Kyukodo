@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://18vtuh2267jd"]
+
+[ext_resource type="Script" path="res://objects/item/Item.gd" id="1_q5jpg"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_q5jpg")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 0
+
+[connection signal="body_entered" from="Detector" to="." method="_on_body_entered"]

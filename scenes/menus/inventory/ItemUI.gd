@@ -23,7 +23,7 @@ func set_item(item: ItemData) -> void:
 	if item == null: return
 
 	quantity_label.text = str(item.quantity)
-	image_texture.texture = item.texture
+	image_texture.texture = item.ref.texture
 	data.visible = true
 
 

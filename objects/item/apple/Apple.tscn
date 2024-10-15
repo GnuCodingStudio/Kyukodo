@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhagqd0fyadx4"]
+
+[ext_resource type="PackedScene" uid="uid://18vtuh2267jd" path="res://objects/item/Item.tscn" id="1_4cq5b"]
+[ext_resource type="Texture2D" uid="uid://mm18f3omrlde" path="res://assets/image/roguelike.png" id="2_od0ts"]
+[ext_resource type="Script" path="res://objects/item/apple/Apple.gd" id="2_yx45d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re6ti"]
+atlas = ExtResource("2_od0ts")
+region = Rect2(884, 510, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvksb"]
+atlas = ExtResource("2_od0ts")
+region = Rect2(901, 510, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2df8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re6ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvksb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08k0v"]
+radius = 6.0
+
+[node name="Apple" instance=ExtResource("1_4cq5b")]
+script = ExtResource("2_yx45d")
+
+[node name="AnimatedSprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_2df8x")
+autoplay = "default"
+frame_progress = 0.350572
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" index="0"]
+shape = SubResource("CircleShape2D_08k0v")
+debug_color = Color(0, 1, 0, 0.419608)
