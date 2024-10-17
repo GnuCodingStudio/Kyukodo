@@ -7,7 +7,11 @@ script = ExtResource("1_q5jpg")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 
-[node name="Detector" type="Area2D" parent="."]
+[node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 0
 
-[connection signal="body_entered" from="Detector" to="." method="_on_body_entered"]
+[node name="MagnetArea" type="Area2D" parent="."]
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="MagnetArea" to="." method="_on_body_entered_in_magnet_area"]
+[connection signal="body_exited" from="MagnetArea" to="." method="_on_body_exited_in_magnet_area"]

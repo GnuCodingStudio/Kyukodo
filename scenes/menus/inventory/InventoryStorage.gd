@@ -35,6 +35,6 @@ func add_item(new_item: ItemData):
 
 func drop_item(item: ItemData) -> void:
 	for i in items.size():
-		if items[i] != null and items[i].code == item.code:
+		if items[i] != null and items[i].ref.code == item.ref.code:
 			items[i] = null
 	inventory_changed.emit()

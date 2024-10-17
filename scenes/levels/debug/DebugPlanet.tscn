@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dwfiiofq3u5fg"]
+[gd_scene load_steps=7 format=4 uid="uid://dwfiiofq3u5fg"]
 
 [ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
 [ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="2_fo1n8"]
 [ext_resource type="PackedScene" uid="uid://dhagqd0fyadx4" path="res://objects/item/apple/Apple.tscn" id="3_7kd3v"]
+[ext_resource type="Script" path="res://scenes/levels/debug/Items.gd" id="3_somfr"]
 [ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
 
 [node name="DebugPlanet" type="Node2D"]
@@ -18,16 +19,61 @@ tile_map_data = PackedByteArray("AAACAPL/AAAAAAQAAAABAPL/AAAAAAUAAAAAAPL/AAAAAAU
 tile_set = ExtResource("2_fo1n8")
 
 [node name="Items" type="Node2D" parent="."]
-unique_name_in_owner = true
+script = ExtResource("3_somfr")
 
 [node name="Apple1" parent="Items" instance=ExtResource("3_7kd3v")]
-position = Vector2(92, 2)
+position = Vector2(186, -18)
 
 [node name="Apple2" parent="Items" instance=ExtResource("3_7kd3v")]
-position = Vector2(90, 0)
+position = Vector2(184, -20)
 
 [node name="Apple3" parent="Items" instance=ExtResource("3_7kd3v")]
-position = Vector2(771, 66)
+position = Vector2(684, 84)
+
+[node name="Apple4" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(655, -59)
+
+[node name="Apple5" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(631, -106)
+
+[node name="Apple6" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(588, -234)
+
+[node name="Apple7" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(293, -38)
+
+[node name="Apple8" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(60, 0)
+
+[node name="Apple9" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(707, 38)
+
+[node name="Apple10" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(729, 130)
+
+[node name="Apple11" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(802, 126)
+
+[node name="Apple12" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(846, 96)
+
+[node name="Apple13" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(845, 43)
+
+[node name="Apple14" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(852, 25)
+
+[node name="Apple16" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(846, 33)
+
+[node name="Apple17" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(843, 22)
+
+[node name="Apple18" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(837, 35)
+
+[node name="Apple15" parent="Items" instance=ExtResource("3_7kd3v")]
+position = Vector2(705, -21)
 
 [node name="Player" parent="." instance=ExtResource("2_1hvpw")]
 speed = 150.0
