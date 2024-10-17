@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/inventory/ui_tilemap.png" id="2_r6x0d"]
 
 [node name="Inventory" type="Control"]
+process_mode = 3
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 3
 anchors_preset = 15

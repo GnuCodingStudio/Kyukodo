@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("inventory_open_close"):
 		visible = !visible
+		get_tree().paused = visible
 
 
 ## SIGNAL ##
