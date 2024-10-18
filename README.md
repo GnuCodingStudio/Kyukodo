@@ -2,11 +2,11 @@
   <br/><br/>
   <!-- <img src="./path/to/icon.png" width="215" /> -->
   <br/><br/>
-  
-  # Game Name
 
-![GitHub release](https://img.shields.io/github/v/release/{user-name}/{repository-name}?include_prereleases)
-![GitHub](https://img.shields.io/github/license/{user-name}/{repository-name})
+  # Kyukodo
+
+![GitHub release](https://img.shields.io/github/v/release/GnuCodingStudio/Kyukodo?include_prereleases)
+![GitHub](https://img.shields.io/github/license/GnuCodingStudio/Kyukodo)
 
   Short description of the game.
 

@@ -1,6 +1,6 @@
 key,en,fr
-GAME_NAME,Godot 4.3,Godot 4.3
-GAME_TAGLINE,2D Template,Template 2D
+GAME_NAME,Kyukodo,Kyukodo
+GAME_TAGLINE,Setup the planet,Préparation de planète
 MAIN_START_BUTTON,START,DÉMARRER
 MAIN_CREDITS_BUTTON,CREDITS,CRÉDITS
 MAIN_QUIT_BUTTON,QUIT,QUITTER
@@ -12,3 +12,5 @@ CONSOLE_INPUT_SUBMIT,Submit,Envoyer
 CREDITS_TAGLINE,Credits,Crédits
 CREDITS_TITLE_N_AUTHOR,[b]{title}[/b] by [b]{author}[/b],[b]{title}[/b] par [b]{author}[/b]
 CREDITS_BACK_BUTTON,BACK,RETOUR
+ITEM_USE_BUTTON,Use,Utiliser
+ITEM_DROP_BUTTON,Drop,Jeter
