@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 #region abstract
 
-func _ref() -> ItemRef: 	return null
+func _ref() -> ItemRef: return null
 
 #endregion abstract
 
@@ -44,7 +44,7 @@ func _on_body_entered_in_magnet_area(body: Node2D) -> void:
 		magnetPlayer = body
 
 
-func _on_body_exited_in_magnet_area(body: Node2D) -> void:
+func _on_body_exited_the_magnet_area(body: Node2D) -> void:
 	if body == magnetPlayer:
 		magnetPlayer = null
 

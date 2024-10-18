@@ -12,4 +12,4 @@ func _init(ref: ItemRef, quantity: int) -> void:
 
 
 func withAddedQuantity(quantity: int) -> ItemData:
-	return ItemData.new(ref, self.quantity + quantity)
+	return ItemData.new(self.ref, self.quantity + quantity)

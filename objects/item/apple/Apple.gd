@@ -3,4 +3,4 @@ extends Item
 
 
 func _ref() -> ItemRef:
-	return Items.REF_APPLE
+	return ItemRefs.REF_APPLE

@@ -7,15 +7,11 @@ extends Control
 const ITEM_UI = preload("res://scenes/menus/inventory/ItemUI.tscn")
 
 
-## BUILT-IN ##
+#region built-in
 
 func _ready() -> void:
 	InventoryStorage.inventory_changed.connect(_inventory_changed)
 	_inventory_changed()
-
-
-func _process(delta: float) -> void:
-	pass
 
 
 func _input(event: InputEvent) -> void:
@@ -23,8 +19,9 @@ func _input(event: InputEvent) -> void:
 		visible = !visible
 		get_tree().paused = visible
 
+#endregion built-in
 
-## SIGNAL ##
+#region signals
 
 func _inventory_changed() -> void:
 	for child in items_grid.get_children():
@@ -39,3 +36,5 @@ func _inventory_changed() -> void:
 
 func _on_item_drop(item: ItemData) -> void:
 	InventoryStorage.drop_item(item)
+
+#endregion signals

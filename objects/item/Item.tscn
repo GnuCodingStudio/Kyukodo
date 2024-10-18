@@ -14,4 +14,4 @@ collision_layer = 0
 
 [connection signal="body_entered" from="CollisionArea" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="MagnetArea" to="." method="_on_body_entered_in_magnet_area"]
-[connection signal="body_exited" from="MagnetArea" to="." method="_on_body_exited_in_magnet_area"]
+[connection signal="body_exited" from="MagnetArea" to="." method="_on_body_exited_the_magnet_area"]
