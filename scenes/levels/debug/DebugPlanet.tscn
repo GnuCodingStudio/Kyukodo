@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dwfiiofq3u5fg"]
+[gd_scene load_steps=8 format=4 uid="uid://dwfiiofq3u5fg"]
 
 [ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhagqd0fyadx4" path="res://objects/item/apple/Apple.tscn" id="3_7kd3v"]
 [ext_resource type="Script" path="res://scenes/levels/debug/Items.gd" id="3_somfr"]
 [ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
+[ext_resource type="PackedScene" uid="uid://bfhoxhkvf1uy4" path="res://objects/resource/stone/StoneResource.tscn" id="5_bw6g5"]
 
 [node name="DebugPlanet" type="Node2D"]
 script = ExtResource("1_ubl6c")
@@ -74,6 +75,17 @@ position = Vector2(837, 35)
 
 [node name="Apple15" parent="Items" instance=ExtResource("3_7kd3v")]
 position = Vector2(705, -21)
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="ItemResource1" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(25, -117)
+
+[node name="ItemResource2" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(34, -113)
+
+[node name="ItemResource3" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(25, -108)
 
 [node name="Player" parent="." instance=ExtResource("2_1hvpw")]
 speed = 150.0

@@ -108,6 +108,7 @@ locale/translations=PackedStringArray("res://resources/localization/MenuTranslat
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Object"
+2d_physics/layer_3="Collectable"
 
 [rendering]
 

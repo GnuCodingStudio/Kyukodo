@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4jmalkiwfch"]
+
+[ext_resource type="Script" path="res://objects/resource/ItemResource.gd" id="1_8hg5e"]
+
+[node name="ItemResource" type="StaticBody2D" groups=["resource"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_8hg5e")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
