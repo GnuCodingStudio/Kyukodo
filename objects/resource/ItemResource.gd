@@ -21,12 +21,12 @@ func is_collectable() -> bool:
 
 
 func show_as_collectable() -> void:
-	animated_sprite.modulate = Color("#505050")
+	_set_shining_intensity(0.4)
 	information_panel.show()
 
 
 func hide_as_collectable() -> void:
-	animated_sprite.modulate = Color("#FFFFFF")
+	_set_shining_intensity(0.0)
 	information_panel.hide()
 
 #endregion logic
@@ -45,5 +45,9 @@ func _display_action_key() -> void:
 			printerr("Action \"action_collect\" is not key")
 	else:
 		printerr("Action \"action_collect\" doesn't have any action")
+
+
+func _set_shining_intensity(intensity: float) -> void:
+	animated_sprite.material.set("shader_param/intensity", intensity)
 
 #endregion private
