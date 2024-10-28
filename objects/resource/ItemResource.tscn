@@ -47,7 +47,7 @@ theme_override_constants/separation = 0
 [node name="CollectLabel" type="Label" parent="InformationPanel/Margin/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "Collect with"
+text = "RESOURCE_COLLECT_WITH"
 
 [node name="KeyLabel" type="Label" parent="InformationPanel/Margin/VBox"]
 unique_name_in_owner = true
