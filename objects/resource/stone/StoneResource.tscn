@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfhoxhkvf1uy4"]
+[gd_scene load_steps=9 format=3 uid="uid://bfhoxhkvf1uy4"]
 
 [ext_resource type="PackedScene" uid="uid://do4jmalkiwfch" path="res://objects/resource/ItemResource.tscn" id="1_y5cwq"]
 [ext_resource type="Texture2D" uid="uid://metqx6jtxy7k" path="res://objects/resource/resources.png" id="2_pthtu"]
+[ext_resource type="Script" path="res://objects/resource/stone/StoneResource.gd" id="2_vvwcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxr0w"]
 atlas = ExtResource("2_pthtu")
@@ -45,12 +46,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7ujr"]
 size = Vector2(15, 15)
 
-[node name="ItemResource" instance=ExtResource("1_y5cwq")]
+[node name="StoneResource" instance=ExtResource("1_y5cwq")]
+script = ExtResource("2_vvwcf")
 
 [node name="AnimatedSprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_fbakm")
-animation = &"0"
+animation = &"2"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_x7ujr")
+
+[node name="GrowthTimer" type="Timer" parent="." index="3"]
+unique_name_in_owner = true
+wait_time = 30.0
+
+[connection signal="timeout" from="GrowthTimer" to="." method="_on_growth_timer_tick"]

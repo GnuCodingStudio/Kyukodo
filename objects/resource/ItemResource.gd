@@ -29,7 +29,17 @@ func hide_as_collectable() -> void:
 	_set_shining_intensity(0.0)
 	information_panel.hide()
 
+
+
 #endregion logic
+
+#region abstract
+
+func collect() -> ItemData:
+	printerr("_spawn_item_data() not implemented", self)
+	return null
+
+#endregion abstract
 
 #region private
 
@@ -48,6 +58,6 @@ func _display_action_key() -> void:
 
 
 func _set_shining_intensity(intensity: float) -> void:
-	animated_sprite.material.set("shader_param/intensity", intensity)
+	animated_sprite.material.set("shader_parameter/intensity", intensity)
 
 #endregion private

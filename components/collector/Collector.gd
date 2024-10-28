@@ -14,16 +14,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	var resources = _area.get_overlapping_bodies().filter(_is_collectable_resource)
-	resources.sort_custom(_sort_by_distance)
-	prints("resources", resources)
-
-	if _targeted_resource != null:
-		_targeted_resource.hide_as_collectable()
-
-	if resources.size() > 0:
-		_targeted_resource = resources[0]
-		_targeted_resource.show_as_collectable()
+	_target_nearest_resource()
+	_detect_resource_collection()
 
 #endregion built-in
 
@@ -41,3 +33,26 @@ func _sort_by_distance(a: Node2D, b: Node2D) -> bool:
 	return (distance_to_a < distance_to_b)
 
 #endregion logic
+
+#region private
+
+func _target_nearest_resource() -> void:
+	var resources = _area.get_overlapping_bodies().filter(_is_collectable_resource)
+	resources.sort_custom(_sort_by_distance)
+
+	if _targeted_resource != null:
+		_targeted_resource.hide_as_collectable()
+
+	if resources.size() > 0:
+		_targeted_resource = resources[0]
+		_targeted_resource.show_as_collectable()
+	else:
+		_targeted_resource = null
+
+
+func _detect_resource_collection() -> void:
+	if Input.is_action_just_pressed("action_collect") and _targeted_resource != null:
+		var item_data = _targeted_resource.collect()
+		InventoryStorage.add_item(item_data)
+
+#endregion private
