@@ -9,18 +9,18 @@ var _targeted_resource: ItemResource
 
 func _ready() -> void:
 	assert(get_parent() is Area2D, "Parent of Collector must be an Area2D")
-	
+
 	_area = get_parent() as Area2D
 
 
 func _process(delta: float) -> void:
-	var resources = _area.get_overlapping_bodies().filter(func (body: Node2D): return body.is_in_group("resource"))
+	var resources = _area.get_overlapping_bodies().filter(_is_collectable_resource)
 	resources.sort_custom(_sort_by_distance)
 	prints("resources", resources)
-	
+
 	if _targeted_resource != null:
 		_targeted_resource.hide_as_collectable()
-	
+
 	if resources.size() > 0:
 		_targeted_resource = resources[0]
 		_targeted_resource.show_as_collectable()
@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 
 #region logic
 
-// TODO Utiliser cette méthode haut dessus
 func _is_collectable_resource(body: Node2D) -> bool:
 	if body is ItemResource:
 		return body.is_collectable()
