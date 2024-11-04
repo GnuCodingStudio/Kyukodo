@@ -87,6 +87,39 @@ position = Vector2(34, -113)
 [node name="ItemResource3" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(25, -108)
 
+[node name="ItemResource4" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(155, -145)
+
+[node name="ItemResource5" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(167, -149)
+
+[node name="ItemResource6" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(164, -137)
+
+[node name="ItemResource7" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(175, -142)
+
+[node name="ItemResource8" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(182, -151)
+
+[node name="ItemResource9" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(406, -168)
+
+[node name="ItemResource10" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(423, -184)
+
+[node name="ItemResource11" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(420, -171)
+
+[node name="ItemResource12" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(763, 58)
+
+[node name="ItemResource13" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(776, 50)
+
+[node name="ItemResource14" parent="Resources" instance=ExtResource("5_bw6g5")]
+position = Vector2(776, 64)
+
 [node name="Player" parent="." instance=ExtResource("2_1hvpw")]
 speed = 150.0
 

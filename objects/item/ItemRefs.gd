@@ -12,9 +12,8 @@ var REF_PUMPKIN = ItemRef.new(
 	preload("res://objects/pumpkin/pumpkin.png")
 )
 
-// TODO Créer un StaticStone.tres comme pour les pommes
 var REF_STONE = ItemRef.new(
 	"STONE",
 	"ITEM_STONE",
-	preload("res://objects/pumpkin/pumpkin.png")
+	preload("res://objects/item/stone/StaticStone.tres")
 )
