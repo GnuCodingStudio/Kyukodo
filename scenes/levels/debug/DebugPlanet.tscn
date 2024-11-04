@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dwfiiofq3u5fg"]
+[gd_scene load_steps=9 format=4 uid="uid://dwfiiofq3u5fg"]
 
 [ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/levels/debug/Items.gd" id="3_somfr"]
 [ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
 [ext_resource type="PackedScene" uid="uid://bfhoxhkvf1uy4" path="res://objects/resource/stone/StoneResource.tscn" id="5_bw6g5"]
+[ext_resource type="PackedScene" uid="uid://2efo5oxjvdjq" path="res://objects/resource/gold/GoldResource.tscn" id="6_olipk"]
 
 [node name="DebugPlanet" type="Node2D"]
 script = ExtResource("1_ubl6c")
@@ -78,47 +79,50 @@ position = Vector2(705, -21)
 
 [node name="Resources" type="Node2D" parent="."]
 
-[node name="ItemResource1" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource1" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(25, -117)
 
-[node name="ItemResource2" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource2" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(34, -113)
 
-[node name="ItemResource3" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource3" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(25, -108)
 
-[node name="ItemResource4" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource4" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(155, -145)
 
-[node name="ItemResource5" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource5" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(167, -149)
 
-[node name="ItemResource6" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource6" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(164, -137)
 
-[node name="ItemResource7" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource7" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(176, -142)
 
-[node name="ItemResource8" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource8" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(182, -151)
 
-[node name="ItemResource9" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource9" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(406, -168)
 
-[node name="ItemResource10" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource10" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(423, -184)
 
-[node name="ItemResource11" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource11" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(420, -171)
 
-[node name="ItemResource12" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource12" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(763, 58)
 
-[node name="ItemResource13" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource13" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(776, 50)
 
-[node name="ItemResource14" parent="Resources" instance=ExtResource("5_bw6g5")]
+[node name="StoneResource14" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(776, 64)
+
+[node name="GoldResource" parent="Resources" instance=ExtResource("6_olipk")]
+position = Vector2(312, 73)
 
 [node name="Player" parent="." instance=ExtResource("2_1hvpw")]
 speed = 150.0

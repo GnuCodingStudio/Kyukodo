@@ -17,3 +17,9 @@ var REF_STONE = ItemRef.new(
 	"ITEM_STONE",
 	preload("res://objects/item/stone/StaticStone.tres")
 )
+
+var REF_GOLD = ItemRef.new(
+	"GOLD",
+	"ITEM_GOLD",
+	preload("res://objects/item/gold/StaticGold.tres")
+)
