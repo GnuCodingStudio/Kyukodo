@@ -4,6 +4,8 @@ extends Node2D
 var _area: Area2D
 var _targeted_resource: ItemResource
 
+@onready var audio_player: AudioStreamPlayer = %AudioPlayer
+
 
 #region built-in
 
@@ -15,7 +17,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_target_nearest_resource()
-	_detect_resource_collection()
+	if Input.is_action_just_pressed("action_collect"):
+		_detect_resource_collection()
 
 #endregion built-in
 
@@ -51,8 +54,9 @@ func _target_nearest_resource() -> void:
 
 
 func _detect_resource_collection() -> void:
-	if Input.is_action_just_pressed("action_collect") and _targeted_resource != null:
+	if _targeted_resource != null:
 		var item_data = _targeted_resource.collect()
 		InventoryStorage.add_item(item_data)
+		audio_player.play()
 
 #endregion private
