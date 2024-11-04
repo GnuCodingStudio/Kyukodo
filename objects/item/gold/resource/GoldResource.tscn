@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://do4jmalkiwfch" path="res://objects/resource/ItemResource.tscn" id="1_1ccyc"]
 [ext_resource type="Shader" path="res://objects/resource/ItemResource.gdshader" id="2_bqr41"]
-[ext_resource type="Script" path="res://objects/resource/gold/GoldResource.gd" id="2_f55gb"]
+[ext_resource type="Script" path="res://objects/item/gold/resource/GoldResource.gd" id="2_f55gb"]
 [ext_resource type="Texture2D" uid="uid://metqx6jtxy7k" path="res://objects/resource/resources.png" id="3_n2pl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_800oj"]
