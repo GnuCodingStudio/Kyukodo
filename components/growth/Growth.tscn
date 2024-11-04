@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bouxt3dlc0w8o"]
+
+[ext_resource type="Script" path="res://components/growth/Growth.gd" id="1_pqc43"]
+
+[node name="Growth" type="Node"]
+script = ExtResource("1_pqc43")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
