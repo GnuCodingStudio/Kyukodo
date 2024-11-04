@@ -67,6 +67,6 @@ shape = SubResource("RectangleShape2D_x7ujr")
 
 [node name="GrowthTimer" type="Timer" parent="." index="3"]
 unique_name_in_owner = true
-wait_time = 30.0
+wait_time = 300.0
 
 [connection signal="timeout" from="GrowthTimer" to="." method="_on_growth_timer_tick"]

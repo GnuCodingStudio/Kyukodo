@@ -97,7 +97,7 @@ position = Vector2(167, -149)
 position = Vector2(164, -137)
 
 [node name="ItemResource7" parent="Resources" instance=ExtResource("5_bw6g5")]
-position = Vector2(175, -142)
+position = Vector2(176, -142)
 
 [node name="ItemResource8" parent="Resources" instance=ExtResource("5_bw6g5")]
 position = Vector2(182, -151)
