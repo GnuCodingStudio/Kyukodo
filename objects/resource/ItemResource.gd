@@ -17,6 +17,7 @@ func _ready() -> void:
 #region logic
 
 func is_collectable() -> bool:
+	printerr("is_collectable() not implemented ", self, " ", self.get_path())
 	return true
 
 

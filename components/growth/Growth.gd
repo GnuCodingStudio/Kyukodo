@@ -1,6 +1,7 @@
 class_name Growth
 extends Node
 
+
 ## Seconds between growth tick
 @export var tick_time: int = 3600
 @export var initial_quantity: int = 0
