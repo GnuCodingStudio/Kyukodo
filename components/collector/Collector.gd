@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_target_nearest_resource()
 	if Input.is_action_just_pressed("action_collect"):
-		_detect_resource_collection()
+		_collect_targeted_resource()
 
 #endregion built-in
 
@@ -65,7 +65,7 @@ func _reset_targeted_resource() -> void:
 	_targeted_resource = null
 
 
-func _detect_resource_collection() -> void:
+func _collect_targeted_resource() -> void:
 	if _targeted_resource != null:
 		var item_data = _targeted_resource.collect()
 		InventoryStorage.add_item(item_data)
