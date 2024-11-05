@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfhoxhkvf1uy4"]
+
+[ext_resource type="PackedScene" uid="uid://do4jmalkiwfch" path="res://objects/resource/ItemResource.tscn" id="1_y5cwq"]
+[ext_resource type="Texture2D" uid="uid://metqx6jtxy7k" path="res://objects/resource/resources.png" id="2_pthtu"]
+[ext_resource type="Script" path="res://objects/item/stone/resource/StoneResource.gd" id="2_vvwcf"]
+[ext_resource type="Shader" path="res://objects/resource/ItemResource.gdshader" id="3_fnc6o"]
+[ext_resource type="PackedScene" uid="uid://bouxt3dlc0w8o" path="res://components/growth/Growth.tscn" id="5_e4tj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7ujr"]
+size = Vector2(15, 15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhwso"]
+resource_local_to_scene = true
+shader = ExtResource("3_fnc6o")
+shader_parameter/intensity = 0.0
+shader_parameter/speed = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxr0w"]
+atlas = ExtResource("2_pthtu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilaqv"]
+atlas = ExtResource("2_pthtu")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmi0u"]
+atlas = ExtResource("2_pthtu")
+region = Rect2(34, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbakm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxr0w")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilaqv")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmi0u")
+}],
+"loop": false,
+"name": &"2",
+"speed": 5.0
+}]
+
+[node name="StoneResource" instance=ExtResource("1_y5cwq")]
+script = ExtResource("2_vvwcf")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_x7ujr")
+
+[node name="AnimatedSprite" parent="." index="1"]
+material = SubResource("ShaderMaterial_qhwso")
+sprite_frames = SubResource("SpriteFrames_fbakm")
+animation = &"2"
+
+[node name="Growth" parent="." index="3" instance=ExtResource("5_e4tj5")]
+unique_name_in_owner = true
+tick_time = 300
+initial_quantity = 2
+max_quantity = 2
+
+[connection signal="_on_quantity_change" from="Growth" to="." method="_on_quantity_change"]
