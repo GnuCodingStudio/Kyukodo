@@ -1,6 +1,7 @@
 class_name StoneResource
 extends ItemResource
 
+
 @onready var growth: Growth = %Growth
 
 

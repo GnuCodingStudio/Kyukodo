@@ -1,6 +1,7 @@
 class_name ItemResource
 extends StaticBody2D
 
+
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var information_panel: PanelContainer = %InformationPanel
 @onready var key_label: Label = %KeyLabel
