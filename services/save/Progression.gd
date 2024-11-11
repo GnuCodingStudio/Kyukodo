@@ -2,8 +2,8 @@ extends Node
 class_name Progression
 
 
-var coins: int = 0
+var player_position: Vector2
 
 
-func _init(coins: int):
-	self.coins = coins
+func _init(player_position: Vector2):
+	self.player_position = player_position

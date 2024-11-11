@@ -14,7 +14,7 @@ func init():
 
 func save(progression: Progression):
 	data = progression
-	
+
 	var content = _serialize(progression)
 	var file = FileAccess.open(dir_path + filename, FileAccess.WRITE)
 	file.store_string(content)
@@ -32,17 +32,18 @@ func _load():
 		file.close()
 		return data
 	else:
-		return Progression.new(0)
+		return Progression.new(Vector2.ZERO)
 
 
 func _serialize(progression: Progression) -> String:
 	return JSON.stringify({
-		"coins": progression.coins
+		"player_x": progression.player_position.x,
+		"player_y": progression.player_position.y,
 	})
 
 
 func _parse(json: String) -> Progression:
 	var dict = JSON.parse_string(json)
 	return Progression.new(
-		dict["coins"]
+		Vector2(dict["player_x"], dict["player_y"])
 	)
