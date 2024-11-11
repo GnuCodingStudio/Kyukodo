@@ -2,4 +2,4 @@ extends Control
 
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/main/MainMenu.tscn")
+	SceneTransition.change_scene("res://scenes/menus/main/MainMenu.tscn")
