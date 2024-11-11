@@ -2,13 +2,14 @@ extends Node2D
 
 
 @onready var player: Player = %Player
+@onready var camera_2d: Camera2D = %Camera2D
 @onready var camp_respawn: Node2D = %CampRespawn
 
 
 func _ready() -> void:
 	ProgressionService.init()
 	player.position = ProgressionService.data.player_position
-
+	camera_2d.reset_smoothing()
 
 # DEBUG
 func _input(event: InputEvent) -> void:
