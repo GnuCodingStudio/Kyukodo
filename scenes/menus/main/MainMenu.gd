@@ -10,11 +10,11 @@ func _ready():
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/debug/DebugPlanet.tscn")
+	SceneTransition.change_scene("res://scenes/levels/debug/DebugPlanet.tscn")
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/menus/credits/CreditsMenu.tscn")
+	SceneTransition.change_scene("res://scenes/menus/credits/CreditsMenu.tscn")
 
 
 func _on_quit_button_pressed():

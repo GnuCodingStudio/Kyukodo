@@ -21,6 +21,7 @@ ProgressionService="*res://services/save/ProgressionService.gd"
 UiAudio="*res://components/uicontrols/UIAudio.gd"
 InventoryStorage="*res://scenes/menus/inventory/InventoryStorage.gd"
 ItemRefs="*res://objects/item/ItemRefs.gd"
+SceneTransition="*res://services/transition/SceneTransition.tscn"
 
 [debug]
 
@@ -28,9 +29,8 @@ shapes/collision/shape_color=Color(1, 1, 1, 0.42)
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=1280
+window/size/viewport_height=768
 window/stretch/mode="viewport"
 
 [file_customization]
@@ -120,3 +120,4 @@ locale/translations=PackedStringArray("res://resources/localization/MenuTranslat
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
