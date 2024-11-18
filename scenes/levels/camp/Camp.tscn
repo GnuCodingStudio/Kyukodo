@@ -16,7 +16,7 @@ tile_set = ExtResource("1_demkb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, 96)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.7, 2.7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
