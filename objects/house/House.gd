@@ -2,7 +2,7 @@ class_name House
 extends Node2D
 
 
-var level: int = 1:
+var level: int = 0:
 	set(value):
 		level = value
 		_on_level_changed(value)
@@ -25,6 +25,7 @@ func _required_gold() -> int:
 
 
 func _on_level_changed(level: int) -> void:
+	%Level0.visible = level == 0
 	%Level1.visible = level == 1
 	%Level2.visible = level == 2
 	%Level3.visible = level == 3
