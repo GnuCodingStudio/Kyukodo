@@ -35,6 +35,22 @@ func add_item(new_item: ItemData):
 
 func drop_item(item: ItemData) -> void:
 	for i in items.size():
-		if items[i] != null and items[i].ref.code == item.ref.code:
+		if items[i] != null and items[i].ref == item.ref:
 			items[i] = null
 	inventory_changed.emit()
+
+
+func count(itemRef: ItemRef) -> int:
+	var mathing_items = items.filter(func (item): return item != null and item.ref == itemRef)
+	if mathing_items.is_empty():
+		return 0
+
+	return mathing_items[0].quantity
+
+
+func decrease(itemRef: ItemRef, quantity: int) -> void:
+	for i in items.size():
+		if items[i] != null and items[i].ref == itemRef:
+			items[i].quantity -= quantity
+			if items[i].quantity <= 0:
+				items[i] = null

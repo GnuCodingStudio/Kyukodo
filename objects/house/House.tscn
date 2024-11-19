@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://c0bt3b3gnnmrj"]
+[gd_scene load_steps=16 format=4 uid="uid://c0bt3b3gnnmrj"]
 
 [ext_resource type="Script" path="res://objects/house/House.gd" id="1_mdmoh"]
 [ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="1_pbe7r"]
 [ext_resource type="Script" path="res://components/clickable/Clickable.gd" id="4_3s0au"]
 [ext_resource type="Texture2D" uid="uid://mm18f3omrlde" path="res://assets/image/roguelike.png" id="4_civ8t"]
+[ext_resource type="Texture2D" uid="uid://bnw13q6vl2i54" path="res://objects/item/stone/StaticStone.tres" id="5_gyv3y"]
+[ext_resource type="Texture2D" uid="uid://d38gxhmy201f" path="res://objects/item/gold/StaticGold.tres" id="6_ygxl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8p8w"]
 size = Vector2(31, 32)
@@ -105,10 +107,6 @@ shape = SubResource("RectangleShape2D_usewq")
 unique_name_in_owner = true
 visible = false
 
-[node name="Clickable" type="Node" parent="Level3" node_paths=PackedStringArray("clickable_area")]
-script = ExtResource("4_3s0au")
-clickable_area = NodePath("../ClickableArea")
-
 [node name="Walls" type="TileMapLayer" parent="Level3"]
 tile_map_data = PackedByteArray("AAAAAAQAAwARABYAAAAAAAUAAwARABYAAAAAAAYAAwARABYAAAAAAAcAAwARABcAAAABAAQAAwASABYAAAABAAUAAwASABYAAAABAAYAAwASABYAAAABAAcAAwASABcAAAACAAQAAwASABYAAAACAAUAAwASABYAAAACAAYAAwASABYAAAACAAcAAwASABcAAAADAAQAAwASABYAAAADAAUAAwASABYAAAADAAYAAwASABYAAAADAAcAAwASABcAAAAEAAQAAwASABYAAAAEAAUAAwASABYAAAAEAAYAAwASABYAAAAEAAcAAwASABcAAAAFAAQAAwATABYAAAAFAAUAAwATABYAAAAFAAYAAwATABYAAAAFAAcAAwATABcAAAACAAgAAwAIABEAAAAFAAgAAwAIABEAAAADAAgAAwAIABEAAAAEAAgAAwAIABEAAAAAAAgAAwAIABEAAAABAAgAAwAIABEAAAAGAAgAAwAJABEAAAAGAAQAAwAJAA8AAAAGAAUAAwAJABAAAAAGAAYAAwAJABAAAAAGAAcAAwAJABAAAAD//wgAAwAHABEAAAD//wUAAwAHABAAAAD//wYAAwAHABAAAAD//wcAAwAHABAAAAD//wQAAwAHAA8AAAA=")
 tile_set = ExtResource("1_pbe7r")
@@ -148,5 +146,71 @@ texture = SubResource("AtlasTexture_itamh")
 position = Vector2(48, 64)
 shape = SubResource("RectangleShape2D_vqh0v")
 
+[node name="UpgradeContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 120.0
+offset_top = 48.0
+offset_right = 372.0
+offset_bottom = 168.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Margin" type="MarginContainer" parent="UpgradeContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="UpgradeContainer/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="UpgradeContainer/Margin/VBox"]
+layout_mode = 2
+text = "UPGRADE_TITLE"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UpgradeContainer/Margin/VBox"]
+layout_mode = 2
+columns = 3
+
+[node name="StoneImage" type="TextureRect" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_gyv3y")
+expand_mode = 3
+
+[node name="StoneQuantity" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="StoneLabel" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "UPGRADE_STONE_LABEL"
+
+[node name="GoldImage" type="TextureRect" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_ygxl8")
+expand_mode = 3
+
+[node name="GoldQuantity" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="GoldLabel" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "UPGRADE_GOLD_LABEL"
+
+[node name="UpgradeButton" type="Button" parent="UpgradeContainer/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "UPGRADE_BUTTON"
+
+[connection signal="click" from="Level1/Clickable" to="." method="on_house_click"]
 [connection signal="mouse_entered" from="Level1/ClickableArea" to="." method="_on_level1_mouse_entered"]
 [connection signal="mouse_exited" from="Level1/ClickableArea" to="." method="_on_level1_mouse_exited"]
+[connection signal="click" from="Level2/Clickable" to="." method="on_house_click"]
+[connection signal="mouse_exited" from="UpgradeContainer" to="." method="_on_upgrade_container_mouse_exited"]
+[connection signal="pressed" from="UpgradeContainer/Margin/VBox/UpgradeButton" to="." method="_on_upgrade_pressed"]

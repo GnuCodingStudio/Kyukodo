@@ -17,7 +17,8 @@ tile_set = ExtResource("1_demkb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, 96)
-zoom = Vector2(2.7, 2.7)
+scale = Vector2(2.7, 2.7)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -40,6 +41,7 @@ size_flags_vertical = 0
 text = "CAMP_RETURN_TO_PLANETE"
 
 [node name="House" parent="." instance=ExtResource("3_roobb")]
+unique_name_in_owner = true
 position = Vector2(-158, 13)
 
 [connection signal="pressed" from="CanvasLayer/Margin/ReturnToPlaneteButton" to="." method="_on_return_to_planete_pressed"]
