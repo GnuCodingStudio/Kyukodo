@@ -1,0 +1,236 @@
+[gd_scene load_steps=17 format=4 uid="uid://c0bt3b3gnnmrj"]
+
+[ext_resource type="Script" path="res://objects/house/House.gd" id="1_mdmoh"]
+[ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="1_pbe7r"]
+[ext_resource type="Script" path="res://components/clickable/Clickable.gd" id="4_3s0au"]
+[ext_resource type="Texture2D" uid="uid://mm18f3omrlde" path="res://assets/image/roguelike.png" id="4_civ8t"]
+[ext_resource type="Texture2D" uid="uid://bnw13q6vl2i54" path="res://objects/item/stone/StaticStone.tres" id="5_gyv3y"]
+[ext_resource type="Texture2D" uid="uid://d38gxhmy201f" path="res://objects/item/gold/StaticGold.tres" id="6_ygxl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqc0n"]
+size = Vector2(94, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8p8w"]
+size = Vector2(31, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2yel"]
+size = Vector2(31, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxux"]
+size = Vector2(31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogxdv"]
+atlas = ExtResource("4_civ8t")
+region = Rect2(545, 1, 14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q34n"]
+size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usewq"]
+size = Vector2(32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h50t"]
+atlas = ExtResource("4_civ8t")
+region = Rect2(765, 102, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itamh"]
+atlas = ExtResource("4_civ8t")
+region = Rect2(784, 121, 12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqh0v"]
+size = Vector2(96, 128)
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_mdmoh")
+
+[node name="Level0" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAAEAAwAHAAkAAAAAAAgAAwAHAAsAAAAFAAgAAwAJAAsAAAAAAAcAAwAHAAoAAAAAAAYAAwAHAAoAAAAAAAUAAwAHAAoAAAAAAAQAAwAHAAoAAAAAAAMAAwAHAAoAAAAAAAIAAwAHAAoAAAABAAEAAwAIAAkAAAACAAEAAwAIAAkAAAADAAEAAwAIAAkAAAAEAAEAAwAIAAkAAAAFAAEAAwAJAAkAAAAFAAIAAwAJAAoAAAAFAAMAAwAJAAoAAAAFAAQAAwAJAAoAAAAFAAUAAwAJAAoAAAAFAAYAAwAJAAoAAAAFAAcAAwAJAAoAAAABAAgAAwAIAAsAAAACAAgAAwAIAAsAAAADAAgAAwAIAAsAAAAEAAgAAwAIAAsAAAAEAAcAAwAIAAoAAAADAAcAAwAIAAoAAAACAAcAAwAIAAoAAAABAAcAAwAIAAoAAAABAAYAAwAIAAoAAAABAAUAAwAIAAoAAAABAAQAAwAIAAoAAAABAAMAAwAIAAoAAAABAAIAAwAIAAoAAAACAAIAAwAIAAoAAAADAAIAAwAIAAoAAAAEAAIAAwAIAAoAAAAEAAMAAwAIAAoAAAADAAMAAwAIAAoAAAADAAQAAwAIAAoAAAADAAUAAwAIAAoAAAACAAUAAwAIAAoAAAACAAQAAwAIAAoAAAACAAMAAwAIAAoAAAACAAYAAwAIAAoAAAADAAYAAwAIAAoAAAAEAAYAAwAIAAoAAAAEAAUAAwAIAAoAAAAEAAQAAwAIAAoAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Clickable" type="Node" parent="Level0" node_paths=PackedStringArray("clickable_area")]
+script = ExtResource("4_3s0au")
+clickable_area = NodePath("../ClickableArea")
+
+[node name="ClickableArea" type="Area2D" parent="Level0"]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Level0/ClickableArea"]
+position = Vector2(48, 80)
+shape = SubResource("RectangleShape2D_tqc0n")
+
+[node name="Level1" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+tile_map_data = PackedByteArray("AAABAAEAAwAuAAoAAAABAAIAAwAuAAsAAAACAAEAAwAvAAoAAAACAAIAAwAvAAsAAAAEAAQAAwAuAAoAAAAEAAUAAwAuAAsAAAAFAAQAAwAvAAoAAAAFAAUAAwAvAAsAAAAAAAYAAwAuAAoAAAAAAAcAAwAuAAsAAAABAAYAAwAvAAoAAAABAAcAAwAvAAsAAAAAAAgAAwAHAAsAAAABAAgAAwAIAAsAAAACAAgAAwAIAAsAAAADAAgAAwAJAAsAAAACAAcAAwAHAAoAAAACAAYAAwAHAAoAAAACAAUAAwAFAAoAAAACAAQAAwAJAAoAAAACAAMAAwAJAAoAAAABAAMAAwAHAAoAAAAFAAYAAwAJAAsAAAAEAAYAAwAGAAoAAAADAAYAAwAFAAoAAAADAAcAAwAFAAkAAAABAAUAAwAHAAsAAAABAAQAAwAHAAoAAAADAAUAAwAJAAkAAAAEAAcAAwAJAAsAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Clickable" type="Node" parent="Level1" node_paths=PackedStringArray("clickable_area")]
+script = ExtResource("4_3s0au")
+clickable_area = NodePath("../ClickableArea")
+
+[node name="ClickableArea" type="Area2D" parent="Level1"]
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="Level1/ClickableArea"]
+position = Vector2(32.5, 32)
+shape = SubResource("RectangleShape2D_y8p8w")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="Level1/ClickableArea"]
+position = Vector2(80.5, 80)
+shape = SubResource("RectangleShape2D_g2yel")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="Level1/ClickableArea"]
+position = Vector2(16.5, 112)
+shape = SubResource("RectangleShape2D_ekxux")
+
+[node name="Level2" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Clickable" type="Node" parent="Level2" node_paths=PackedStringArray("clickable_area")]
+script = ExtResource("4_3s0au")
+clickable_area = NodePath("../ClickableArea")
+
+[node name="Floor" type="TileMapLayer" parent="Level2"]
+tile_map_data = PackedByteArray("AAAAAAUAAwAIABAAAAAAAAYAAwAIABEAAAABAAUAAwAIABAAAAABAAYAAwAGAA8AAAACAAUAAwAFABAAAAACAAYAAwAIABAAAAACAAcAAwAGAA8AAAACAAgAAwAHABAAAAACAAkAAwAHABEAAAADAAUAAwAIAA8AAAADAAYAAwAIABAAAAADAAcAAwAIABAAAAADAAgAAwAIABAAAAADAAkAAwAIABEAAAAFAAkAAwAIABEAAAAEAAkAAwAIABEAAAAFAAUAAwAIAA8AAAAEAAUAAwAIAA8AAAABAAcAAwAHABEAAAACAAIAAwAJAA8AAAACAAMAAwAJABAAAAACAAQAAwAJABAAAAD//wUAAwAHABAAAAD//wQAAwAHABAAAAD//wMAAwAHABAAAAD//wIAAwAHAA8AAAD//wYAAwAHABEAAAAGAAUAAwAJAA8AAAAGAAYAAwAJABAAAAAGAAcAAwAJABAAAAAGAAgAAwAJABAAAAAGAAkAAwAJABEAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Walls" type="TileMapLayer" parent="Level2"]
+tile_map_data = PackedByteArray("AAAAAAMAAwAmABYAAAAAAAQAAwAmABcAAAABAAMAAwAoABYAAAABAAQAAwAoABcAAAAEAAcAAwAmABYAAAAEAAgAAwAmABcAAAAFAAcAAwAoABYAAAAFAAgAAwAoABcAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Roof" type="TileMapLayer" parent="Level2"]
+tile_map_data = PackedByteArray("AAAAAAEAAwAiABUAAAAAAAIAAwAiABYAAAAAAAMAAwAiABcAAAABAAEAAwAjABUAAAABAAIAAwAjABYAAAABAAMAAwAjABcAAAAEAAUAAwAiABUAAAAEAAYAAwAiABYAAAAEAAcAAwAiABcAAAAFAAUAAwAjABUAAAAFAAYAAwAjABYAAAAFAAcAAwAjABcAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Door1" type="Sprite2D" parent="Level2"]
+position = Vector2(22, 73.65)
+scale = Vector2(0.642857, 0.794643)
+texture = SubResource("AtlasTexture_ogxdv")
+
+[node name="Door2" type="Sprite2D" parent="Level2"]
+position = Vector2(75, 137.6)
+scale = Vector2(0.642857, 0.794643)
+texture = SubResource("AtlasTexture_ogxdv")
+
+[node name="ClickableArea" type="Area2D" parent="Level2"]
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="Level2/ClickableArea"]
+position = Vector2(16, 48)
+shape = SubResource("RectangleShape2D_1q34n")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="Level2/ClickableArea"]
+position = Vector2(80, 112)
+shape = SubResource("RectangleShape2D_usewq")
+
+[node name="Level3" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Walls" type="TileMapLayer" parent="Level3"]
+tile_map_data = PackedByteArray("AAAAAAQAAwARABYAAAAAAAUAAwARABYAAAAAAAYAAwARABYAAAAAAAcAAwARABcAAAABAAQAAwASABYAAAABAAUAAwASABYAAAABAAYAAwASABYAAAABAAcAAwASABcAAAACAAQAAwASABYAAAACAAUAAwASABYAAAACAAYAAwASABYAAAACAAcAAwASABcAAAADAAQAAwASABYAAAADAAUAAwASABYAAAADAAYAAwASABYAAAADAAcAAwASABcAAAAEAAQAAwASABYAAAAEAAUAAwASABYAAAAEAAYAAwASABYAAAAEAAcAAwASABcAAAAFAAQAAwATABYAAAAFAAUAAwATABYAAAAFAAYAAwATABYAAAAFAAcAAwATABcAAAACAAgAAwAIABEAAAAFAAgAAwAIABEAAAADAAgAAwAIABEAAAAEAAgAAwAIABEAAAAAAAgAAwAIABEAAAABAAgAAwAIABEAAAAGAAgAAwAJABEAAAAGAAQAAwAJAA8AAAAGAAUAAwAJABAAAAAGAAYAAwAJABAAAAAGAAcAAwAJABAAAAD//wgAAwAHABEAAAD//wUAAwAHABAAAAD//wYAAwAHABAAAAD//wcAAwAHABAAAAD//wQAAwAHAA8AAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Roof" type="TileMapLayer" parent="Level3"]
+tile_map_data = PackedByteArray("AAAAAAAAAwAUABUAAAAAAAEAAwAUABYAAAAAAAIAAwAUABYAAAAAAAMAAwAUABYAAAAAAAQAAwAUABcAAAABAAAAAwAZABUAAAABAAEAAwAZABYAAAABAAIAAwAZABYAAAABAAMAAwAZABYAAAABAAQAAwAWABYAAAACAAAAAwAZABUAAAACAAEAAwAZABYAAAACAAIAAwAZABYAAAACAAMAAwAZABYAAAACAAQAAwAWABYAAAADAAAAAwAZABUAAAADAAEAAwAZABYAAAADAAIAAwAZABYAAAADAAMAAwAZABYAAAADAAQAAwAWABYAAAAEAAAAAwAZABUAAAAEAAEAAwAZABYAAAAEAAIAAwAZABYAAAAEAAMAAwAZABYAAAAEAAQAAwAWABYAAAAFAAAAAwAVABUAAAAFAAEAAwAVABYAAAAFAAIAAwAVABYAAAAFAAMAAwAVABYAAAAFAAQAAwAVABcAAAA=")
+tile_set = ExtResource("1_pbe7r")
+
+[node name="Door1" type="Sprite2D" parent="Level3"]
+position = Vector2(19, 120.25)
+scale = Vector2(0.857143, 1.03333)
+texture = SubResource("AtlasTexture_ogxdv")
+
+[node name="Window1" type="Sprite2D" parent="Level3"]
+position = Vector2(19, 90)
+texture = SubResource("AtlasTexture_0h50t")
+
+[node name="Window2" type="Sprite2D" parent="Level3"]
+position = Vector2(48, 90)
+texture = SubResource("AtlasTexture_0h50t")
+
+[node name="Window3" type="Sprite2D" parent="Level3"]
+position = Vector2(78, 90)
+texture = SubResource("AtlasTexture_0h50t")
+
+[node name="SmallWindow1" type="Sprite2D" parent="Level3"]
+position = Vector2(48, 115)
+texture = SubResource("AtlasTexture_itamh")
+
+[node name="SmallWindow2" type="Sprite2D" parent="Level3"]
+position = Vector2(78, 115)
+texture = SubResource("AtlasTexture_itamh")
+
+[node name="ClickableArea" type="Area2D" parent="Level3"]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Level3/ClickableArea"]
+position = Vector2(48, 64)
+shape = SubResource("RectangleShape2D_vqh0v")
+
+[node name="UpgradeContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 120.0
+offset_top = 48.0
+offset_right = 372.0
+offset_bottom = 168.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Margin" type="MarginContainer" parent="UpgradeContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="UpgradeContainer/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="UpgradeContainer/Margin/VBox"]
+layout_mode = 2
+text = "UPGRADE_TITLE"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UpgradeContainer/Margin/VBox"]
+layout_mode = 2
+columns = 3
+
+[node name="StoneImage" type="TextureRect" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_gyv3y")
+expand_mode = 3
+
+[node name="StoneQuantity" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="StoneLabel" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "UPGRADE_STONE_LABEL"
+
+[node name="GoldImage" type="TextureRect" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_ygxl8")
+expand_mode = 3
+
+[node name="GoldQuantity" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="GoldLabel" type="Label" parent="UpgradeContainer/Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "UPGRADE_GOLD_LABEL"
+
+[node name="UpgradeButton" type="Button" parent="UpgradeContainer/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "UPGRADE_BUTTON"
+
+[connection signal="click" from="Level0/Clickable" to="." method="on_house_click"]
+[connection signal="click" from="Level1/Clickable" to="." method="on_house_click"]
+[connection signal="mouse_entered" from="Level1/ClickableArea" to="." method="_on_level1_mouse_entered"]
+[connection signal="mouse_exited" from="Level1/ClickableArea" to="." method="_on_level1_mouse_exited"]
+[connection signal="click" from="Level2/Clickable" to="." method="on_house_click"]
+[connection signal="mouse_exited" from="UpgradeContainer" to="." method="_on_upgrade_container_mouse_exited"]
+[connection signal="pressed" from="UpgradeContainer/Margin/VBox/UpgradeButton" to="." method="_on_upgrade_pressed"]
