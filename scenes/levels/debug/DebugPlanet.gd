@@ -8,8 +8,9 @@ extends Node2D
 
 func _ready() -> void:
 	ProgressionService.init()
-	InventoryStorage.restore(ProgressionService.data.items)
-	player.position = ProgressionService.data.player_position
+	var progression = ProgressionService.data
+	InventoryStorage.restore(progression.items)
+	player.position = progression.player_position
 	camera_2d.reset_smoothing()
 
 
@@ -22,5 +23,5 @@ func _on_camp_entered(body: Node2D) -> void:
 func _save() -> void:
 	var progression = ProgressionService.data
 	progression.player_position = camp_respawn.position
-	progression.items = InventoryStorage.items
+	progression.items = InventoryStorage.get_items()
 	ProgressionService.save(progression)

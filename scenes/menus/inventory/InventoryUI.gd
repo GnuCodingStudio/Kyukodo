@@ -27,7 +27,7 @@ func _inventory_changed() -> void:
 	for child in items_grid.get_children():
 		items_grid.remove_child(child)
 
-	for item in InventoryStorage.items:
+	for item in InventoryStorage._items:
 		var itemUI = ITEM_UI.instantiate()
 		items_grid.add_child(itemUI)
 		itemUI.set_item(item)
