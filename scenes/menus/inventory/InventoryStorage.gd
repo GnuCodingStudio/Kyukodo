@@ -54,3 +54,8 @@ func decrease(itemRef: ItemRef, quantity: int) -> void:
 			items[i].quantity -= quantity
 			if items[i].quantity <= 0:
 				items[i] = null
+
+
+func restore(items: Array[ItemData]) -> void:
+	for item in items:
+		add_item(item)
