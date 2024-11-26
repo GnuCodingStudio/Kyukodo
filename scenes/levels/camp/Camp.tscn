@@ -44,7 +44,6 @@ text = "CAMP_RETURN_TO_PLANETE"
 unique_name_in_owner = true
 
 [node name="House" parent="Houses" instance=ExtResource("3_roobb")]
-unique_name_in_owner = true
 position = Vector2(-158, 13)
 
 [connection signal="pressed" from="CanvasLayer/Margin/ReturnToPlaneteButton" to="." method="_on_return_to_planete_pressed"]
