@@ -1,47 +1,53 @@
 extends Node
 
-var items: Array[ItemData] = []
+
+var _items: Array[ItemData] = []
+
 
 signal inventory_changed
 
 
 func _ready() -> void:
-	items.resize(30)
+	_reset()
 
 
 func add_item(new_item: ItemData):
 	var found = false
 
-	for i in items.size():
-		var slot = items[i]
+	for i in _items.size():
+		var slot = _items[i]
 		if slot != null && slot.ref.code == new_item.ref.code:
 			found = true
 			var updated_item = slot.withAddedQuantity(new_item.quantity)
-			items[i] = updated_item
+			_items[i] = updated_item
 			break
 
 	if not found:
-		for i in items.size():
-			if items[i] == null:
+		for i in _items.size():
+			if _items[i] == null:
 				found = true
-				items[i] = new_item
+				_items[i] = new_item
 				break
 
 	if not found:
-		items.append(new_item)
+		_items.append(new_item)
 
 	inventory_changed.emit()
 
 
 func drop_item(item: ItemData) -> void:
-	for i in items.size():
-		if items[i] != null and items[i].ref == item.ref:
-			items[i] = null
+	for i in _items.size():
+		if _items[i] != null and _items[i].ref == item.ref:
+			_items[i] = null
 	inventory_changed.emit()
 
 
+func get_items() -> Array[ItemData]:
+	return _items.filter(_filter_not_null)
+
+
 func count(itemRef: ItemRef) -> int:
-	var mathing_items = items.filter(func (item): return item != null and item.ref == itemRef)
+	var mathing_items = _items.filter(func (item): return item != null and item.ref == itemRef)
 	if mathing_items.is_empty():
 		return 0
 
@@ -49,8 +55,23 @@ func count(itemRef: ItemRef) -> int:
 
 
 func decrease(itemRef: ItemRef, quantity: int) -> void:
-	for i in items.size():
-		if items[i] != null and items[i].ref == itemRef:
-			items[i].quantity -= quantity
-			if items[i].quantity <= 0:
-				items[i] = null
+	for i in _items.size():
+		if _items[i] != null and _items[i].ref == itemRef:
+			_items[i].quantity -= quantity
+			if _items[i].quantity <= 0:
+				_items[i] = null
+
+
+func restore(items: Array[ItemData]) -> void:
+	_reset()
+	for item in items:
+		add_item(item)
+
+
+func _reset() -> void:
+	_items = []
+	_items.resize(30)
+
+
+func _filter_not_null(item: ItemData) -> bool:
+	return item != null

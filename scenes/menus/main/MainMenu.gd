@@ -6,6 +6,7 @@ extends Control
 
 func _ready():
 	ProgressionService.init()
+	InventoryStorage.restore(ProgressionService.data.items)
 	start_button.grab_focus()
 
 
