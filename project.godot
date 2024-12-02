@@ -22,6 +22,7 @@ UiAudio="*res://components/uicontrols/UIAudio.gd"
 InventoryStorage="*res://scenes/menus/inventory/InventoryStorage.gd"
 ItemRefs="*res://objects/item/ItemRefs.gd"
 SceneTransition="*res://services/transition/SceneTransition.tscn"
+ObjectivesManager="*res://scenes/hud/objectives/ObjectivesManager.tscn"
 
 [debug]
 

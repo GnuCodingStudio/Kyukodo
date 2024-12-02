@@ -7,6 +7,9 @@ class_name Actor
 @onready var collision_shape = %CollisionShape
 
 
+signal move
+
+
 var state := State.IDLE:
 	set(value):
 		if state != value:
@@ -41,6 +44,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	move_and_collide(moving_direction * speed * delta)
+	move.emit()
 
 
 func _direction_name() -> String:

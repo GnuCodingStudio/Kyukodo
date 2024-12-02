@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cls11bx287veh"]
 
-[ext_resource type="Script" path="res://scenes/hud/objectives/Objectives.gd" id="1_10g61"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/ObjectivesHUD.gd" id="1_10g61"]
 
 [node name="Objectives" type="PanelContainer"]
 anchors_preset = 2
@@ -30,7 +30,7 @@ text = "Objectif en cours"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-text = "Afin de construire construire votre camp : récoltez 10 unités de pierre."
+text = "..."
 autowrap_mode = 3
 
 [node name="FinishButton" type="Button" parent="Margin/VBox"]

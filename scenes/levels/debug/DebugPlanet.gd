@@ -13,6 +13,8 @@ func _ready() -> void:
 	player.position = progression.player_position
 	camera_2d.reset_smoothing()
 
+	ObjectivesManager.auto_connect(player)
+
 
 func _on_camp_entered(body: Node2D) -> void:
 	if body is Player:
