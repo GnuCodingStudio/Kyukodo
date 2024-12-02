@@ -60,12 +60,14 @@ func decrease(itemRef: ItemRef, quantity: int) -> void:
 			_items[i].quantity -= quantity
 			if _items[i].quantity <= 0:
 				_items[i] = null
+	inventory_changed.emit()
 
 
 func restore(items: Array[ItemData]) -> void:
 	_reset()
 	for item in items:
 		add_item(item)
+	inventory_changed.emit()
 
 
 func _reset() -> void:
