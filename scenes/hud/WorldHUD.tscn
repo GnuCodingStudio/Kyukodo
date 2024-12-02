@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bi18kdjtomks3"]
 
-[ext_resource type="PackedScene" uid="uid://cls11bx287veh" path="res://scenes/hud/objectives/Objectives.tscn" id="1_h4u35"]
+[ext_resource type="PackedScene" uid="uid://cls11bx287veh" path="res://scenes/hud/objectives/ObjectivesHUD.tscn" id="1_h4u35"]
 
 [node name="WorldHud" type="CanvasLayer"]
 

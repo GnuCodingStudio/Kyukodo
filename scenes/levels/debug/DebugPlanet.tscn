@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
 [ext_resource type="PackedScene" uid="uid://bfhoxhkvf1uy4" path="res://objects/item/stone/resource/StoneResource.tscn" id="5_bw6g5"]
 [ext_resource type="PackedScene" uid="uid://2efo5oxjvdjq" path="res://objects/item/gold/resource/GoldResource.tscn" id="6_olipk"]
-[ext_resource type="PackedScene" uid="uid://bi18kdjtomks3" path="res://scenes/hud/WorldHUD.tscn" id="9_oamee"]
+[ext_resource type="PackedScene" uid="uid://bi18kdjtomks3" path="res://scenes/hud/WorldHUD.tscn" id="10_f5xsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg031"]
 size = Vector2(58, 10)
@@ -170,6 +170,6 @@ offset_bottom = 300.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="WorldHud" parent="." instance=ExtResource("9_oamee")]
+[node name="WorldHud" parent="." instance=ExtResource("10_f5xsb")]
 
 [connection signal="body_entered" from="CampEnterArea" to="." method="_on_camp_entered"]
