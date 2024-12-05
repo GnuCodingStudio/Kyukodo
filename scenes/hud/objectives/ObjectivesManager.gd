@@ -21,9 +21,14 @@ func finish_current_objective() -> void:
 	_start_next_objective()
 
 
-func auto_connect(player: Player) -> void:
+func connect_player(player: Player) -> void:
 	for child in get_children():
 		(child as Objective).auto_connect(player)
+
+
+func connect_inventory(inventory: InventoryStorage) -> void:
+	for child in get_children():
+		(child as Objective).auto_connect(inventory)
 
 
 func _on_objective_complete() -> void:
