@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3ppwsin1iruc"]
+[gd_scene load_steps=5 format=3 uid="uid://b3ppwsin1iruc"]
 
 [ext_resource type="Script" path="res://scenes/hud/objectives/Objective.gd" id="1_2iumh"]
 [ext_resource type="Script" path="res://scenes/hud/objectives/ObjectivesManager.gd" id="1_vjoxf"]
 [ext_resource type="Script" path="res://scenes/hud/objectives/MovementObjective.gd" id="2_bcirb"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/CollectObjective.gd" id="4_c5ylb"]
 
 [node name="ObjectivesManager" type="Node"]
 script = ExtResource("1_vjoxf")
@@ -14,5 +15,11 @@ description = "Avant toute chose, dégourdissez-vous les pattes."
 state = 1
 
 [node name="CollectForTents" type="Node" parent="."]
-script = ExtResource("1_2iumh")
+script = ExtResource("4_c5ylb")
+goal_code = "STONE"
+goal_quantity = 10
 description = "Afin de construire construire votre camp : récoltez 10 unités de pierre."
+
+[node name="The end" type="Node" parent="."]
+script = ExtResource("1_2iumh")
+description = "Félicitation, vous avez fini les objectifs."

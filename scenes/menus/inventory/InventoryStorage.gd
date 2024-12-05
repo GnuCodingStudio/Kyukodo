@@ -5,6 +5,7 @@ var _items: Array[ItemData] = []
 
 
 signal inventory_changed
+signal item_collected(item: ItemData)
 
 
 func _ready() -> void:
@@ -32,6 +33,7 @@ func add_item(new_item: ItemData):
 	if not found:
 		_items.append(new_item)
 
+	item_collected.emit(new_item)
 	inventory_changed.emit()
 
 
