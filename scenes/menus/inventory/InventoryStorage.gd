@@ -13,6 +13,10 @@ func _ready() -> void:
 
 
 func add_item(new_item: ItemData):
+	_add_item(new_item, true)
+
+
+func _add_item(new_item: ItemData, notify: bool):
 	var found = false
 
 	for i in _items.size():
@@ -33,8 +37,9 @@ func add_item(new_item: ItemData):
 	if not found:
 		_items.append(new_item)
 
-	item_collected.emit(new_item)
-	inventory_changed.emit()
+	if notify:
+		item_collected.emit(new_item)
+		inventory_changed.emit()
 
 
 func drop_item(item: ItemData) -> void:
@@ -68,7 +73,7 @@ func decrease(itemRef: ItemRef, quantity: int) -> void:
 func restore(items: Array[ItemData]) -> void:
 	_reset()
 	for item in items:
-		add_item(item)
+		_add_item(item, false)
 	inventory_changed.emit()
 
 
