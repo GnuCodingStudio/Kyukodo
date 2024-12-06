@@ -22,8 +22,8 @@ func auto_connect(node: Node) -> void:
 #region signal
 
 func _on_item_collected(itemData: ItemData) -> void:
-	if itemData.ref.code != goal_code:
-		return
+	if state != ObjectiveState.PENDING: return
+	if itemData.ref.code != goal_code: return
 	
 	_quantity_collected += itemData.quantity
 	
