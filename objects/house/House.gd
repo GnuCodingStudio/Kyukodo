@@ -2,6 +2,9 @@ class_name House
 extends Node2D
 
 
+signal level_changed(int)
+
+
 var level: int = 0:
 	set(value):
 		level = value
@@ -29,6 +32,7 @@ func _on_level_changed(level: int) -> void:
 	%Level1.visible = level == 1
 	%Level2.visible = level == 2
 	%Level3.visible = level == 3
+	level_changed.emit(level)
 
 #endregion logic
 

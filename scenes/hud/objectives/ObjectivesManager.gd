@@ -31,6 +31,11 @@ func connect_inventory(inventory: InventoryStorage) -> void:
 		(child as Objective).auto_connect(inventory)
 
 
+func connect_house(house: House) -> void:
+	for child in get_children():
+		(child as Objective).auto_connect(house)
+
+
 func _on_objective_complete() -> void:
 	objective_changed.emit(get_current_objective())
 
