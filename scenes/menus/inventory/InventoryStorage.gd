@@ -53,20 +53,12 @@ func get_items() -> Array[ItemData]:
 	return _items.filter(_filter_not_null)
 
 
-func count(itemRef: ItemRef) -> int:
-	var mathing_items = _items.filter(func (item): return item != null and item.ref == itemRef)
-	if mathing_items.is_empty():
-		return 0
-
-	return mathing_items[0].quantity
+func count_by_ref(itemRef: ItemRef) -> int:
+	return _count(func (item): return item != null and item.ref == itemRef)
 
 
 func count_by_code(code: String) -> int:
-	var mathing_items = _items.filter(func (item): return item != null and item.ref.code == code)
-	if mathing_items.is_empty():
-		return 0
-
-	return mathing_items[0].quantity
+	return _count(func (item): return item != null and item.ref.code == code)
 
 
 func decrease(itemRef: ItemRef, quantity: int) -> void:
@@ -85,10 +77,22 @@ func restore(items: Array[ItemData]) -> void:
 	inventory_changed.emit()
 
 
-func _reset() -> void:
-	_items = []
-	_items.resize(30)
+#region private
+
+func _count(callable: Callable) -> int:
+	var mathing_items = _items.filter(callable)
+	if mathing_items.is_empty():
+		return 0
+
+	return mathing_items[0].quantity
 
 
 func _filter_not_null(item: ItemData) -> bool:
 	return item != null
+
+
+func _reset() -> void:
+	_items = []
+	_items.resize(30)
+
+#endregion private
