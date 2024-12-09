@@ -55,3 +55,12 @@ func _on_start() -> void:
 	pass # abstract
 
 #endregion abstract
+
+
+#region private
+
+func _on_complete() -> void:
+	state = ObjectiveState.COMPLETED
+	complete.emit()
+
+#endregion private

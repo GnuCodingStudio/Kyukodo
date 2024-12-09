@@ -34,9 +34,4 @@ func _on_inventory_changed() -> void:
 func _on_start() -> void:
 	_on_inventory_changed()
 
-
-func _on_complete() -> void:
-	state = ObjectiveState.COMPLETED
-	complete.emit()
-
 #endregion private

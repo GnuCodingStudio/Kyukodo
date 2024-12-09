@@ -26,12 +26,3 @@ func _on_level_changed(level: int) -> void:
 		_on_complete()
 
 #endregion
-
-
-#region private
-
-func _on_complete() -> void:
-	state = ObjectiveState.COMPLETED
-	complete.emit()
-
-#endregion private
