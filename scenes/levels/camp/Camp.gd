@@ -29,7 +29,7 @@ func _on_return_to_planete_pressed() -> void:
 #region private
 
 func _connect_objectives(house: House) -> void:
-	ObjectivesManager.connect_house(house)
+	ObjectivesManager.auto_connect(house)
 
 
 func _get_house_level(house: Node) -> int:

@@ -28,19 +28,9 @@ func finish_current_objective() -> void:
 	_start_next_objective()
 
 
-func connect_player(player: Player) -> void:
+func auto_connect(node: Node) -> void:
 	for child in get_children():
-		(child as Objective).auto_connect(player)
-
-
-func connect_inventory(inventory: InventoryStorage) -> void:
-	for child in get_children():
-		(child as Objective).auto_connect(inventory)
-
-
-func connect_house(house: House) -> void:
-	for child in get_children():
-		(child as Objective).auto_connect(house)
+		(child as Objective).auto_connect(node)
 
 
 func restore(finished_objectives: Array[String]) -> void:
