@@ -20,3 +20,8 @@ UPGRADE_TITLE,UPGRADE,AMÉLIORER
 UPGRADE_STONE_LABEL,Stone,Pierre
 UPGRADE_GOLD_LABEL,Gold,Or
 UPGRADE_BUTTON,UPGRADE,AMÉLIORER
+OBJECTIVE_TITLE,Ongoing objective,Objectif en cours
+OBJECTIVE_MAKE_SOME_STEPS,"Before all, let’s walk some steps.","Avant toute chose, dégourdissez-vous les pattes."
+OBJECTIVE_COLLECT_FOR_TENTS,To setup your camp : collect 10 stone units.,Afin de construire construire votre camp : récoltez 10 unités de pierre.
+OBJECTIVE_BUILD_FIRST_TENTS,"Start setuping your camp, build first tents.","Débutez l’installation de votre campement, construisez les premières tentes."
+OBJECTIVE_THE_END,"Congratulations, you’ve finished the objectives.","Félicitation, vous avez fini les objectifs."

@@ -9,23 +9,23 @@
 [node name="ObjectivesManager" type="Node"]
 script = ExtResource("1_vjoxf")
 
-[node name="MakeSomeMoves" type="Node" parent="."]
+[node name="MakeSomeSteps" type="Node" parent="."]
 script = ExtResource("2_bcirb")
 goal_distance = 200.0
-description = "Avant toute chose, dégourdissez-vous les pattes."
+description = "OBJECTIVE_MAKE_SOME_STEPS"
 state = 1
 
 [node name="CollectForTents" type="Node" parent="."]
 script = ExtResource("4_c5ylb")
 goal_code = "STONE"
 goal_quantity = 10
-description = "Afin de construire construire votre camp : récoltez 10 unités de pierre."
+description = "OBJECTIVE_COLLECT_FOR_TENTS"
 
-[node name="BuildFirstTent" type="Node" parent="."]
+[node name="BuildFirstTents" type="Node" parent="."]
 script = ExtResource("4_6cpv2")
 level_goal = 1
-description = "Commencez par un installer votre campement, construisez les premières tentes."
+description = "OBJECTIVE_BUILD_FIRST_TENTS"
 
 [node name="The end" type="Node" parent="."]
 script = ExtResource("1_2iumh")
-description = "Félicitation, vous avez fini les objectifs."
+description = "OBJECTIVE_THE_END"
