@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3ppwsin1iruc"]
+
+[ext_resource type="Script" path="res://scenes/hud/objectives/Objective.gd" id="1_2iumh"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/ObjectivesManager.gd" id="1_vjoxf"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/MovementObjective.gd" id="2_bcirb"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/HouseObjective.gd" id="4_6cpv2"]
+[ext_resource type="Script" path="res://scenes/hud/objectives/CollectObjective.gd" id="4_c5ylb"]
+
+[node name="ObjectivesManager" type="Node"]
+script = ExtResource("1_vjoxf")
+
+[node name="Make some steps" type="Node" parent="."]
+script = ExtResource("2_bcirb")
+goal_distance = 200.0
+description = "OBJECTIVE_MAKE_SOME_STEPS"
+state = 1
+
+[node name="Collect for tents" type="Node" parent="."]
+script = ExtResource("4_c5ylb")
+goal_code = "STONE"
+goal_quantity = 10
+description = "OBJECTIVE_COLLECT_FOR_TENTS"
+
+[node name="Build first tents" type="Node" parent="."]
+script = ExtResource("4_6cpv2")
+level_goal = 1
+description = "OBJECTIVE_BUILD_FIRST_TENTS"
+
+[node name="The end" type="Node" parent="."]
+script = ExtResource("1_2iumh")
+description = "OBJECTIVE_THE_END"

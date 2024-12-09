@@ -2,6 +2,9 @@ class_name House
 extends Node2D
 
 
+signal level_changed(int)
+
+
 var level: int = 0:
 	set(value):
 		level = value
@@ -29,6 +32,7 @@ func _on_level_changed(level: int) -> void:
 	%Level1.visible = level == 1
 	%Level2.visible = level == 2
 	%Level3.visible = level == 3
+	level_changed.emit(level)
 
 #endregion logic
 
@@ -36,8 +40,8 @@ func _on_level_changed(level: int) -> void:
 #region signal
 
 func on_house_click() -> void:
-	var possessed_stone = InventoryStorage.count(ItemRefs.REF_STONE)
-	var possessed_gold = InventoryStorage.count(ItemRefs.REF_GOLD)
+	var possessed_stone = InventoryStorage.count_by_ref(ItemRefs.REF_STONE)
+	var possessed_gold = InventoryStorage.count_by_ref(ItemRefs.REF_GOLD)
 	var can_upgrade = possessed_stone >= _required_stone() and possessed_gold >= _required_gold()
 
 	%StoneQuantity.text = str(possessed_stone) + "/" + str(_required_stone())

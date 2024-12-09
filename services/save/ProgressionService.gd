@@ -33,7 +33,7 @@ func _load():
 		file.close()
 		return data
 	else:
-		return Progression.new(Vector2.ZERO, [], [])
+		return Progression.new(Vector2.ZERO, [], [], [])
 
 
 func _serialize(progression: Progression) -> String:
@@ -41,7 +41,8 @@ func _serialize(progression: Progression) -> String:
 		"player_x": progression.player_position.x,
 		"player_y": progression.player_position.y,
 		"items": progression.items.map(_serialize_item),
-		"houses_levels": progression.houses_levels
+		"houses_levels": progression.houses_levels,
+		"finished_objectives": progression.finished_objectives
 	})
 
 
@@ -50,12 +51,17 @@ func _parse(json: String) -> Progression:
 	return Progression.new(
 		Vector2(dict["player_x"], dict["player_y"]),
 		_parse_items(dict.get("items", [])),
-		_parse_houses_levels(dict.get("houses_levels", []))
-
+		_parse_houses_levels(dict.get("houses_levels", [])),
+		_parse_finished_objectives(dict.get("finished_objectives", []))
 	)
 
 
 #region private
+
+func _parse_finished_objectives(objectives: Array) -> Array[String]:
+	var typedLevels: Array[String]
+	typedLevels.assign(objectives)
+	return typedLevels
 
 
 func _parse_houses_levels(levels: Array) -> Array[int]:
