@@ -10,6 +10,7 @@ func _ready() -> void:
 	ProgressionService.init()
 	var progression = ProgressionService.data
 	InventoryStorage.restore(progression.items)
+	ObjectivesManager.restore(progression.finished_objectives)
 	player.position = progression.player_position
 	camera_2d.reset_smoothing()
 
@@ -27,4 +28,5 @@ func _save() -> void:
 	var progression = ProgressionService.data
 	progression.player_position = camp_respawn.position
 	progression.items = InventoryStorage.get_items()
+	progression.finished_objectives = ObjectivesManager.get_finished_objectives()
 	ProgressionService.save(progression)

@@ -34,12 +34,20 @@ func is_completed() -> bool:
 	return state == ObjectiveState.COMPLETED
 
 
+func is_finished() -> bool:
+	return state == ObjectiveState.FINISHED
+
+
 func start() -> void:
 	state = ObjectiveState.PENDING
 	_on_start()
 
 
 func finish() -> void:
+	state = ObjectiveState.FINISHED
+
+
+func restore_as_finished() -> void:
 	state = ObjectiveState.FINISHED
 
 #endregion logic
