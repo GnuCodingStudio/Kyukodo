@@ -36,6 +36,7 @@ func is_completed() -> bool:
 
 func start() -> void:
 	state = ObjectiveState.PENDING
+	_on_start()
 
 
 func finish() -> void:
@@ -47,6 +48,10 @@ func finish() -> void:
 #region abstract
 
 func auto_connect(node: Node) -> void:
+	pass # abstract
+
+
+func _on_start() -> void:
 	pass # abstract
 
 #endregion abstract

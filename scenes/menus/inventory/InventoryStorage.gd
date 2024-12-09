@@ -61,6 +61,14 @@ func count(itemRef: ItemRef) -> int:
 	return mathing_items[0].quantity
 
 
+func count_by_code(code: String) -> int:
+	var mathing_items = _items.filter(func (item): return item != null and item.ref.code == code)
+	if mathing_items.is_empty():
+		return 0
+
+	return mathing_items[0].quantity
+
+
 func decrease(itemRef: ItemRef, quantity: int) -> void:
 	for i in _items.size():
 		if _items[i] != null and _items[i].ref == itemRef:
