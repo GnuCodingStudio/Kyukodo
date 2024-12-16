@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://do4jmalkiwfch"]
+[gd_scene load_steps=5 format=3 uid="uid://do4jmalkiwfch"]
 
 [ext_resource type="Script" path="res://objects/resource/ItemResource.gd" id="1_8hg5e"]
 [ext_resource type="Shader" path="res://objects/resource/ItemResource.gdshader" id="2_m70ba"]
+[ext_resource type="PackedScene" uid="uid://bouxt3dlc0w8o" path="res://components/growth/Growth.tscn" id="3_67q3v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5folb"]
 resource_local_to_scene = true
@@ -57,3 +58,6 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "[?]"
+
+[node name="Growth" parent="." instance=ExtResource("3_67q3v")]
+unique_name_in_owner = true

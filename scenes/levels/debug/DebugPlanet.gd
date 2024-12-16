@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: Player = %Player
 @onready var camera_2d: Camera2D = %Camera2D
 @onready var camp_respawn: Node2D = %CampRespawn
+@onready var resources: Node2D = %Resources
 
 
 func _ready() -> void:
@@ -34,4 +35,17 @@ func _save() -> void:
 	progression.player_position = camp_respawn.position
 	progression.items = InventoryStorage.get_items()
 	progression.finished_objectives = ObjectivesManager.get_finished_objectives()
+	progression.resources = _get_resources()
 	ProgressionService.save(progression)
+
+
+func _get_resources() -> Array[ResourceData]:
+	var typed: Array[ResourceData]
+	typed.assign(resources.get_children().map(_to_resource_data))
+	return typed
+
+
+func _to_resource_data(node: Node) -> ResourceData:
+	if (node is ItemResource):
+		return node.get_data()
+	return null

@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var information_panel: PanelContainer = %InformationPanel
 @onready var key_label: Label = %KeyLabel
+@onready var growth: Growth = %Growth
 
 
 #region built-in
@@ -32,6 +33,8 @@ func hide_as_collectable() -> void:
 	information_panel.hide()
 
 
+func get_data() -> ResourceData:
+	return ResourceData.new(growth.quantity, growth.timer.time_left)
 
 #endregion logic
 

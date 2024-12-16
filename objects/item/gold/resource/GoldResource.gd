@@ -2,9 +2,6 @@ class_name GoldResource
 extends ItemResource
 
 
-@onready var growth: Growth = %Growth
-
-
 #region logic
 
 func collect() -> ItemData:
