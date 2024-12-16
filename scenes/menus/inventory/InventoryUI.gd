@@ -16,8 +16,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("inventory_open_close"):
-		visible = !visible
-		get_tree().paused = visible
+		_change_visibility(!visible)
+	if visible and event.is_action_pressed("exit"):
+		_change_visibility(false)
 
 #endregion built-in
 
@@ -36,5 +37,10 @@ func _inventory_changed() -> void:
 
 func _on_item_drop(item: ItemData) -> void:
 	InventoryStorage.drop_item(item)
+
+
+func _change_visibility(visible: bool) -> void:
+	self.visible = visible
+	get_tree().paused = visible
 
 #endregion signals
