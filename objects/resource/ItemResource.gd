@@ -38,9 +38,7 @@ func get_data() -> ResourceData:
 
 
 func restore(data: ResourceData) -> void:
-	growth.quantity = data.quantity
-	growth.timer.stop()
-	growth.timer.start(data.time_left)
+	growth.restore(data.quantity, data.time_left)
 
 #endregion logic
 

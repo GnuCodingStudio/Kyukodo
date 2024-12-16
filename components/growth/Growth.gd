@@ -36,6 +36,13 @@ func on_collect() -> void:
 	quantity = 0
 	timer.start(tick_time)
 
+
+func restore(quantity: int, time_left: int) -> void:
+	self.quantity = quantity
+	self.timer.stop()
+	self.timer.start(time_left)
+
+
 #endregion login
 
 
