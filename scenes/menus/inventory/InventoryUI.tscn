@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqrluh38sgwm8"]
 
 [ext_resource type="Script" path="res://scenes/menus/inventory/InventoryUI.gd" id="1_xo04h"]
-[ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/inventory/ui_tilemap.png" id="2_r6x0d"]
+[ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/ui_tilemap.png" id="2_r6x0d"]
 
 [node name="Inventory" type="Control"]
 process_mode = 3

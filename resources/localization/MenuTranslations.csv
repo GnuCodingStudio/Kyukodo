@@ -26,3 +26,6 @@ OBJECTIVE_MAKE_SOME_STEPS,"Before all, let’s walk some steps.","Avant toute ch
 OBJECTIVE_COLLECT_FOR_TENTS,To setup your camp : collect 10 stone units.,Afin de construire construire votre camp : récoltez 10 unités de pierre.
 OBJECTIVE_BUILD_FIRST_TENTS,"Start setuping your camp, build first tents.","Débutez l’installation de votre campement, construisez les premières tentes."
 OBJECTIVE_THE_END,"Congratulations, you’ve finished the objectives.","Félicitation, vous avez fini les objectifs."
+PAUSE_TITLE,PAUSE,PAUSE
+PAUSE_RESUME_BUTTON,Resume,Reprendre
+PAUSE_QUIT_BUTTON,Quit,Quitter

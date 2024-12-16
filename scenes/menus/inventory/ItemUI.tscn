@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbaruof5d543l"]
 
-[ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/inventory/ui_tilemap.png" id="1_vqih8"]
+[ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/ui_tilemap.png" id="1_vqih8"]
 [ext_resource type="Script" path="res://scenes/menus/inventory/ItemUI.gd" id="1_yn632"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlscq"]

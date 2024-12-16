@@ -2,6 +2,9 @@ class_name InventoryUI
 extends Control
 
 
+var enabled: bool = true
+
+
 @onready var items_grid: GridContainer = %ItemsGrid
 
 const ITEM_UI = preload("res://scenes/menus/inventory/ItemUI.tscn")
@@ -15,7 +18,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("inventory_open_close"):
+	if !enabled: return
+
+	if event.is_action_pressed("inventory_open_close"):
 		_change_visibility(!visible)
 	if visible and event.is_action_pressed("exit"):
 		_change_visibility(false)

@@ -6,6 +6,9 @@ extends Node2D
 @onready var camp_respawn: Node2D = %CampRespawn
 @onready var resources: Node2D = %Resources
 
+@onready var inventory: InventoryUI = %Inventory
+@onready var pause_menu: PauseMenu = %PauseMenu
+
 
 func _ready() -> void:
 	ProgressionService.init()
@@ -29,6 +32,7 @@ func _on_camp_entered(body: Node2D) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		_save()
+		get_tree().quit()
 
 
 func _save() -> void:
@@ -59,3 +63,11 @@ func _to_resource_data(node: Node) -> ResourceData:
 	if (node is ItemResource):
 		return node.get_data()
 	return null
+
+
+func _on_inventory_visibility_changed() -> void:
+	pause_menu.enabled = !inventory.visible
+
+
+func _on_pause_menu_visibility_changed() -> void:
+	inventory.enabled = !pause_menu.visible
