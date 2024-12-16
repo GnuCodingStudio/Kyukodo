@@ -15,6 +15,11 @@ func _ready() -> void:
 		_init_house(idx, house, progression)
 		_connect_objectives(house)
 
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		_save()
+
 #endregion built-in
 
 

@@ -36,6 +36,13 @@ func on_collect() -> void:
 	quantity = 0
 	timer.start(tick_time)
 
+
+func restore(quantity: int, time_left: int) -> void:
+	self.quantity = quantity
+	self.timer.stop()
+	self.timer.start(time_left)
+
+
 #endregion login
 
 
@@ -43,7 +50,8 @@ func on_collect() -> void:
 
 func _on_timeout() -> void:
 	quantity += 1
-	if quantity >= max_quantity:
-		timer.stop()
+	timer.stop()
+	if quantity < max_quantity:
+		timer.start(tick_time)
 
 #endregion signal

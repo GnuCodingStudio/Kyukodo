@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://2efo5oxjvdjq"]
+[gd_scene load_steps=11 format=3 uid="uid://2efo5oxjvdjq"]
 
 [ext_resource type="PackedScene" uid="uid://do4jmalkiwfch" path="res://objects/resource/ItemResource.tscn" id="1_1ccyc"]
 [ext_resource type="Shader" path="res://objects/resource/ItemResource.gdshader" id="2_bqr41"]
 [ext_resource type="Script" path="res://objects/item/gold/resource/GoldResource.gd" id="2_f55gb"]
 [ext_resource type="Texture2D" uid="uid://metqx6jtxy7k" path="res://objects/resource/resources.png" id="3_n2pl3"]
-[ext_resource type="PackedScene" uid="uid://bouxt3dlc0w8o" path="res://components/growth/Growth.tscn" id="5_npr4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_800oj"]
 size = Vector2(15, 15)
@@ -66,8 +65,7 @@ material = SubResource("ShaderMaterial_868tp")
 sprite_frames = SubResource("SpriteFrames_ugatd")
 animation = &"2"
 
-[node name="Growth" parent="." index="3" instance=ExtResource("5_npr4v")]
-unique_name_in_owner = true
+[node name="Growth" parent="." index="3"]
 tick_time = 600
 max_quantity = 2
 
