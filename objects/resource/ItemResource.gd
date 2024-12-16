@@ -36,6 +36,12 @@ func hide_as_collectable() -> void:
 func get_data() -> ResourceData:
 	return ResourceData.new(growth.quantity, growth.timer.time_left)
 
+
+func restore(data: ResourceData) -> void:
+	growth.quantity = data.quantity
+	growth.timer.stop()
+	growth.timer.start(data.time_left)
+
 #endregion logic
 
 #region abstract
