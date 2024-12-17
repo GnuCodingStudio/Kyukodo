@@ -45,7 +45,7 @@ func _save() -> void:
 
 
 func _restore_resources(data: Array[ResourceData]) -> void:
-	for i in resources.get_child_count():
+	for i in data.size():
 		var resourceData = data[i]
 		if resourceData != null:
 			var node = resources.get_child(i)
