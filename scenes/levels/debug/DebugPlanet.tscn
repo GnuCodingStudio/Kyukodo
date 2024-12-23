@@ -1,15 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://dwfiiofq3u5fg"]
+[gd_scene load_steps=11 format=4 uid="uid://dwfiiofq3u5fg"]
 
 [ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
 [ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="2_fo1n8"]
 [ext_resource type="PackedScene" uid="uid://bg77j70gcfrqg" path="res://components/items/Items.tscn" id="3_5l2bd"]
 [ext_resource type="PackedScene" uid="uid://dhagqd0fyadx4" path="res://objects/item/apple/Apple.tscn" id="3_7kd3v"]
-[ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
 [ext_resource type="PackedScene" uid="uid://bfhoxhkvf1uy4" path="res://objects/item/stone/resource/StoneResource.tscn" id="5_bw6g5"]
 [ext_resource type="PackedScene" uid="uid://dcd2hi7phoogh" path="res://components/resources/Resources.tscn" id="5_yl6sh"]
 [ext_resource type="PackedScene" uid="uid://2efo5oxjvdjq" path="res://objects/item/gold/resource/GoldResource.tscn" id="6_olipk"]
-[ext_resource type="PackedScene" uid="uid://c8q2245rxwu31" path="res://scenes/menus/pause/PauseMenu.tscn" id="10_38wk6"]
 [ext_resource type="PackedScene" uid="uid://bi18kdjtomks3" path="res://scenes/hud/WorldHUD.tscn" id="10_f5xsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg031"]
@@ -156,29 +154,7 @@ shape = SubResource("RectangleShape2D_eg031")
 debug_color = Color(0, 1, 0, 0.419608)
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("3_wb340")]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -300.0
-offset_right = 400.0
-offset_bottom = 300.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
 [node name="WorldHud" parent="." instance=ExtResource("10_f5xsb")]
-
-[node name="PauseMenu" parent="." instance=ExtResource("10_38wk6")]
 unique_name_in_owner = true
-visible = false
 
 [connection signal="body_entered" from="CampEnterArea" to="." method="_on_camp_entered"]
-[connection signal="visibility_changed" from="CanvasLayer/Inventory" to="." method="_on_inventory_visibility_changed"]
-[connection signal="visibility_changed" from="PauseMenu" to="." method="_on_pause_menu_visibility_changed"]

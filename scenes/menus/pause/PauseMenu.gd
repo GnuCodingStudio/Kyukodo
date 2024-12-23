@@ -1,5 +1,5 @@
 class_name PauseMenu
-extends CanvasLayer
+extends Control
 
 
 @onready var resume_button: Button = %ResumeButton

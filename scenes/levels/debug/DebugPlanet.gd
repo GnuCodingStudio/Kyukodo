@@ -6,8 +6,7 @@ extends Node2D
 @onready var camp_respawn: Node2D = %CampRespawn
 @onready var resources: Resources = %Resources
 
-@onready var inventory: InventoryUI = %Inventory
-@onready var pause_menu: PauseMenu = %PauseMenu
+@onready var world_hud: WorldHud = %WorldHud
 
 
 func _ready() -> void:
@@ -46,11 +45,3 @@ func _save() -> void:
 func _restore_player(position: Vector2) -> void:
 	player.position = position
 	camera_2d.reset_smoothing()
-
-
-func _on_inventory_visibility_changed() -> void:
-	pause_menu.enabled = !inventory.visible
-
-
-func _on_pause_menu_visibility_changed() -> void:
-	inventory.enabled = !pause_menu.visible
