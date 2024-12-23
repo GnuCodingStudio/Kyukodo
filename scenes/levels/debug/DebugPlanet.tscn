@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dwfiiofq3u5fg"]
+[gd_scene load_steps=13 format=4 uid="uid://dwfiiofq3u5fg"]
 
 [ext_resource type="Script" path="res://scenes/levels/debug/DebugPlanet.gd" id="1_ubl6c"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_1hvpw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhagqd0fyadx4" path="res://objects/item/apple/Apple.tscn" id="3_7kd3v"]
 [ext_resource type="PackedScene" uid="uid://cqrluh38sgwm8" path="res://scenes/menus/inventory/InventoryUI.tscn" id="3_wb340"]
 [ext_resource type="PackedScene" uid="uid://bfhoxhkvf1uy4" path="res://objects/item/stone/resource/StoneResource.tscn" id="5_bw6g5"]
+[ext_resource type="PackedScene" uid="uid://dcd2hi7phoogh" path="res://components/resources/Resources.tscn" id="5_yl6sh"]
 [ext_resource type="PackedScene" uid="uid://2efo5oxjvdjq" path="res://objects/item/gold/resource/GoldResource.tscn" id="6_olipk"]
 [ext_resource type="PackedScene" uid="uid://c8q2245rxwu31" path="res://scenes/menus/pause/PauseMenu.tscn" id="10_38wk6"]
 [ext_resource type="PackedScene" uid="uid://bi18kdjtomks3" path="res://scenes/hud/WorldHUD.tscn" id="10_f5xsb"]
@@ -85,7 +86,7 @@ position = Vector2(837, 35)
 [node name="Apple15" parent="Items" instance=ExtResource("3_7kd3v")]
 position = Vector2(705, -21)
 
-[node name="Resources" type="Node2D" parent="."]
+[node name="Resources" parent="." instance=ExtResource("5_yl6sh")]
 unique_name_in_owner = true
 
 [node name="StoneResource1" parent="Resources" instance=ExtResource("5_bw6g5")]

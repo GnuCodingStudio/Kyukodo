@@ -4,7 +4,7 @@ extends Node2D
 @onready var player: Player = %Player
 @onready var camera_2d: Camera2D = %Camera2D
 @onready var camp_respawn: Node2D = %CampRespawn
-@onready var resources: Node2D = %Resources
+@onready var resources: Resources = %Resources
 
 @onready var inventory: InventoryUI = %Inventory
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -15,9 +15,8 @@ func _ready() -> void:
 	var progression = ProgressionService.data
 	InventoryStorage.restore(progression.items)
 	ObjectivesManager.restore(progression.finished_objectives)
-	player.position = progression.player_position
-	_restore_resources(progression.resources)
-	camera_2d.reset_smoothing()
+	_restore_player(progression.player_position)
+	resources.restore(progression.resources)
 
 	ObjectivesManager.auto_connect(player)
 	ObjectivesManager.auto_connect(InventoryStorage)
@@ -40,29 +39,13 @@ func _save() -> void:
 	progression.player_position = camp_respawn.position
 	progression.items = InventoryStorage.get_items()
 	progression.finished_objectives = ObjectivesManager.get_finished_objectives()
-	progression.resources = _get_resources()
+	progression.resources = resources.get_data()
 	ProgressionService.save(progression)
 
 
-func _restore_resources(data: Array[ResourceData]) -> void:
-	for i in data.size():
-		var resourceData = data[i]
-		if resourceData != null:
-			var node = resources.get_child(i)
-			if node is ItemResource:
-				node.restore(resourceData)
-
-
-func _get_resources() -> Array[ResourceData]:
-	var typed: Array[ResourceData]
-	typed.assign(resources.get_children().map(_to_resource_data))
-	return typed
-
-
-func _to_resource_data(node: Node) -> ResourceData:
-	if (node is ItemResource):
-		return node.get_data()
-	return null
+func _restore_player(position: Vector2) -> void:
+	player.position = position
+	camera_2d.reset_smoothing()
 
 
 func _on_inventory_visibility_changed() -> void:
