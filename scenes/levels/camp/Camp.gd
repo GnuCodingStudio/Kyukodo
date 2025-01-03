@@ -26,7 +26,7 @@ func _notification(what: int) -> void:
 #region signal
 
 func _on_return_to_planete_pressed() -> void:
-	SceneTransition.change_scene("res://scenes/levels/debug/DebugPlanet.tscn", _save)
+	SceneTransition.change_scene("res://scenes/levels/shodan/Shodan.tscn", _save)
 
 #endregion signal
 

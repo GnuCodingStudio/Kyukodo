@@ -1,26 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqrluh38sgwm8"]
+[gd_scene load_steps=4 format=3 uid="uid://cqrluh38sgwm8"]
 
+[ext_resource type="StyleBox" uid="uid://bca23dslm2v0r" path="res://resources/theme/InGameMenuPanel.tres" id="1_4cafo"]
 [ext_resource type="Script" path="res://scenes/menus/inventory/InventoryUI.gd" id="1_xo04h"]
 [ext_resource type="Texture2D" uid="uid://cmnithvhkyspe" path="res://scenes/menus/ui_tilemap.png" id="2_r6x0d"]
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Panel"]
 process_mode = 3
 custom_minimum_size = Vector2(800, 600)
-layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1120.0
-offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_4cafo")
 script = ExtResource("1_xo04h")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_r6x0d")

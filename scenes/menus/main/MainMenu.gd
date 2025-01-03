@@ -11,7 +11,7 @@ func _ready():
 
 
 func _on_start_button_pressed():
-	SceneTransition.change_scene("res://scenes/levels/debug/DebugPlanet.tscn")
+	SceneTransition.change_scene("res://scenes/levels/shodan/Shodan.tscn")
 
 
 func _on_credits_button_pressed():
