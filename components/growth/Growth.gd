@@ -10,7 +10,7 @@ extends Node
 @onready var timer: Timer = %Timer
 
 
-signal _on_quantity_change(int)
+signal _on_quantity_change(quantity: int)
 
 
 var quantity := 0:

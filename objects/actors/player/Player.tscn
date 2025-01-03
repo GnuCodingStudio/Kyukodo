@@ -297,14 +297,16 @@ unique_name_in_owner = true
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_pm4dl")
 
-[node name="CollectingArea" type="Area2D" parent="." index="2"]
-unique_name_in_owner = true
+[node name="Collector" parent="." index="2" instance=ExtResource("5_5ck8o")]
 collision_layer = 0
 collision_mask = 4
 
-[node name="Collector" parent="CollectingArea" index="0" instance=ExtResource("5_5ck8o")]
-
-[node name="CollisionShape" type="CollisionShape2D" parent="CollectingArea" index="1"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Collector" index="1"]
 shape = SubResource("CircleShape2D_0miel")
 debug_color = Color(0, 1, 0, 0.419608)
 metadata/_edit_lock_ = true
+
+[node name="CollectingArea" type="Area2D" parent="." index="3"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4

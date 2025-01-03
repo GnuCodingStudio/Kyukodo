@@ -18,21 +18,6 @@ func _ready() -> void:
 
 #region logic
 
-func is_collectable() -> bool:
-	printerr("is_collectable() not implemented ", self, " ", self.get_path())
-	return true
-
-
-func show_as_collectable() -> void:
-	_set_shining_intensity(0.4)
-	information_panel.show()
-
-
-func hide_as_collectable() -> void:
-	_set_shining_intensity(0.0)
-	information_panel.hide()
-
-
 func get_data() -> ResourceData:
 	return ResourceData.new(growth.quantity, growth.timer.time_left)
 
@@ -44,11 +29,31 @@ func restore(data: ResourceData) -> void:
 
 #region abstract
 
-func collect() -> ItemData:
+func _collect() -> ItemData:
 	printerr("_spawn_item_data() not implemented", self)
 	return null
 
 #endregion abstract
+
+#region signal
+
+func _on_select() -> void:
+	_show_as_collectable()
+
+
+func _on_unselect() -> void:
+	_hide_as_collectable()
+
+
+func _on_collect() -> void:
+	var item = _collect()
+	InventoryStorage.add_item(item)
+
+
+func _on_quantity_change(quantity: int) -> void:
+	%Collectable.set_collectable(quantity > 0)
+
+#endregion signal
 
 #region private
 
@@ -68,5 +73,15 @@ func _display_action_key() -> void:
 
 func _set_shining_intensity(intensity: float) -> void:
 	animated_sprite.material.set("shader_parameter/intensity", intensity)
+
+
+func _show_as_collectable() -> void:
+	_set_shining_intensity(0.4)
+	information_panel.show()
+
+
+func _hide_as_collectable() -> void:
+	_set_shining_intensity(0.0)
+	information_panel.hide()
 
 #endregion private

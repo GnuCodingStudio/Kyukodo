@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://do4jmalkiwfch"]
+[gd_scene load_steps=6 format=3 uid="uid://do4jmalkiwfch"]
 
 [ext_resource type="Script" path="res://objects/resource/ItemResource.gd" id="1_8hg5e"]
 [ext_resource type="Shader" path="res://objects/resource/ItemResource.gdshader" id="2_m70ba"]
 [ext_resource type="PackedScene" uid="uid://bouxt3dlc0w8o" path="res://components/growth/Growth.tscn" id="3_67q3v"]
+[ext_resource type="PackedScene" uid="uid://clpbo8krg15ng" path="res://components/collector/Collectable.tscn" id="4_v1k5f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5folb"]
 resource_local_to_scene = true
@@ -61,3 +62,12 @@ text = "[?]"
 
 [node name="Growth" parent="." instance=ExtResource("3_67q3v")]
 unique_name_in_owner = true
+
+[node name="Collectable" parent="." instance=ExtResource("4_v1k5f")]
+unique_name_in_owner = true
+
+[connection signal="_on_quantity_change" from="Growth" to="." method="_on_quantity_change"]
+[connection signal="_on_quantity_change" from="Growth" to="." method="_on_growth__on_quantity_change"]
+[connection signal="on_collect" from="Collectable" to="." method="_on_collect"]
+[connection signal="on_select" from="Collectable" to="." method="_on_select"]
+[connection signal="on_unselect" from="Collectable" to="." method="_on_unselect"]
