@@ -26,6 +26,11 @@ script = ExtResource("4_6cpv2")
 level_goal = 1
 description = "OBJECTIVE_BUILD_FIRST_TENTS"
 
+[node name="Finished objetives" type="Node" parent="."]
+script = ExtResource("4_6cpv2")
+level_goal = 2
+description = "OBJECTIVE_THE_END"
+
 [node name="The end" type="Node" parent="."]
 script = ExtResource("1_2iumh")
-description = "OBJECTIVE_THE_END"
+description = "OBJECTIVE_GAME_FINISHED"
