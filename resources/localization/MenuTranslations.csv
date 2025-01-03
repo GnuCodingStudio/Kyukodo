@@ -1,5 +1,6 @@
 key,en,fr
 CAMP_RETURN_TO_PLANETE,Return to planet,Retour à la planète
+CAMP_TITLE,Welcome to the camp,Bienvenu au campement
 GAME_NAME,Kyukodo,Kyukodo
 GAME_TAGLINE,Setup the planet,Préparation de planète
 MAIN_START_BUTTON,START,DÉMARRER
@@ -23,7 +24,7 @@ UPGRADE_BUTTON,UPGRADE,AMÉLIORER
 OBJECTIVE_TITLE,Ongoing objective,Objectif en cours
 OBJECTIVE_FINISH_BUTTON,Finish,Terminer
 OBJECTIVE_MAKE_SOME_STEPS,"Before all, let’s walk some steps.","Avant toute chose, dégourdissez-vous les pattes."
-OBJECTIVE_COLLECT_FOR_TENTS,To setup your camp : collect 10 stone units.,Afin de construire construire votre camp : récoltez 10 unités de pierre.
+OBJECTIVE_COLLECT_FOR_TENTS,To setup your camp : collect 10 stone units.,Afin de construire construire votre campement : récoltez 10 unités de pierre.
 OBJECTIVE_BUILD_FIRST_TENTS,"Start setuping your camp, build first tents.","Débutez l’installation de votre campement, construisez les premières tentes."
 OBJECTIVE_THE_END,"Congratulations, you’ve finished the objectives.","Félicitation, vous avez fini les objectifs."
 PAUSE_TITLE,PAUSE,PAUSE
