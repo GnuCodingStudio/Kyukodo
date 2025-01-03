@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cls11bx287veh"]
+[gd_scene load_steps=3 format=3 uid="uid://cls11bx287veh"]
 
 [ext_resource type="Script" path="res://scenes/hud/objectives/ObjectivesHUD.gd" id="1_10g61"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48r85"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 0.901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.941176, 0.729412, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Objectives" type="PanelContainer"]
 anchors_preset = 2
@@ -9,6 +21,7 @@ anchor_bottom = 1.0
 offset_top = -107.0
 offset_right = 354.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_48r85")
 script = ExtResource("1_10g61")
 
 [node name="Margin" type="MarginContainer" parent="."]
