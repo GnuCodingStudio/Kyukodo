@@ -69,5 +69,3 @@ animation = &"2"
 tick_time = 300
 initial_quantity = 2
 max_quantity = 2
-
-[connection signal="_on_quantity_change" from="Growth" to="." method="_on_quantity_change"]

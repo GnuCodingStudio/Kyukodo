@@ -67,7 +67,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [connection signal="_on_quantity_change" from="Growth" to="." method="_on_quantity_change"]
-[connection signal="_on_quantity_change" from="Growth" to="." method="_on_growth__on_quantity_change"]
 [connection signal="on_collect" from="Collectable" to="." method="_on_collect"]
 [connection signal="on_select" from="Collectable" to="." method="_on_select"]
 [connection signal="on_unselect" from="Collectable" to="." method="_on_unselect"]
