@@ -1,27 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhagqd0fyadx4"]
+[gd_scene load_steps=5 format=3 uid="uid://dhagqd0fyadx4"]
 
 [ext_resource type="PackedScene" uid="uid://18vtuh2267jd" path="res://objects/item/Item.tscn" id="1_4cq5b"]
 [ext_resource type="Script" path="res://objects/item/apple/Apple.gd" id="2_yx45d"]
 [ext_resource type="SpriteFrames" uid="uid://0km0f38f67s3" path="res://objects/item/apple/AnimatedApple.tres" id="3_ek3k4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08k0v"]
-radius = 6.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a3th4"]
-radius = 20.0
+radius = 5.0
 
 [node name="Apple" instance=ExtResource("1_4cq5b")]
 script = ExtResource("2_yx45d")
 
-[node name="AnimatedSprite" parent="." index="0"]
-sprite_frames = ExtResource("3_ek3k4")
-autoplay = "default"
-frame_progress = 0.350572
-
-[node name="CollisionShape" type="CollisionShape2D" parent="CollisionArea" index="0"]
+[node name="CollisionShape" type="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_08k0v")
 debug_color = Color(0, 1, 0, 0.419608)
 
-[node name="CollisionShape" type="CollisionShape2D" parent="MagnetArea" index="0"]
-shape = SubResource("CircleShape2D_a3th4")
-debug_color = Color(0, 1, 0, 0.419608)
+[node name="AnimatedSprite" parent="." index="1"]
+sprite_frames = ExtResource("3_ek3k4")
+autoplay = "default"
+frame_progress = 0.350572

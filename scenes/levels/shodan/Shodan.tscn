@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://danm5e4nnvlk6"]
+[gd_scene load_steps=11 format=4 uid="uid://danm5e4nnvlk6"]
 
 [ext_resource type="Script" path="res://scenes/levels/shodan/Shodan.gd" id="1_fkaym"]
 [ext_resource type="PackedScene" uid="uid://bsfyypyhwfbs5" path="res://objects/actors/player/Player.tscn" id="2_56wgm"]
 [ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="2_x22aa"]
-[ext_resource type="PackedScene" uid="uid://bg77j70gcfrqg" path="res://components/items/Items.tscn" id="3_7j06d"]
 [ext_resource type="PackedScene" uid="uid://dcd2hi7phoogh" path="res://components/resources/Resources.tscn" id="4_hpym2"]
 [ext_resource type="PackedScene" uid="uid://bi18kdjtomks3" path="res://scenes/hud/WorldHUD.tscn" id="5_2popc"]
 [ext_resource type="PackedScene" uid="uid://dhagqd0fyadx4" path="res://objects/item/apple/Apple.tscn" id="5_hvtje"]
@@ -83,7 +82,7 @@ zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Items" parent="." instance=ExtResource("3_7j06d")]
+[node name="Items" type="Node2D" parent="."]
 
 [node name="Apple" parent="Items" instance=ExtResource("5_hvtje")]
 position = Vector2(73, -122)
