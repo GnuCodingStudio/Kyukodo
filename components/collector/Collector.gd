@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 #region logic
 
 func _target_nearest_resource() -> void:
-	var collectables = get_overlapping_bodies().map(_get_collectable_or_null).filter(_not_null)
-	collectables.sort_custom(_sort_by_distance)
+	var bodies = get_overlapping_bodies()
+	bodies.sort_custom(_sort_by_distance)
+	var collectables = bodies.map(_get_collectable_or_null).filter(_not_null)
 
 	if collectables.size() > 0:
 		var new_target = collectables[0]
@@ -43,7 +44,7 @@ func _sort_by_distance(a: Node2D, b: Node2D) -> bool:
 	return (distance_to_a < distance_to_b)
 
 
-func _not_null(node: Node2D) -> bool:
+func _not_null(node: Node) -> bool:
 	return node != null
 
 #endregion logic
