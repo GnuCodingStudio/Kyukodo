@@ -15,6 +15,7 @@ func _collect() -> ItemData:
 #region private
 
 func _on_quantity_change(quantity: int) -> void:
+	super._on_quantity_change(quantity)
 	%AnimatedSprite.play(str(quantity))
 
 

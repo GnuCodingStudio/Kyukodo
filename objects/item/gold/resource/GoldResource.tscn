@@ -66,6 +66,6 @@ sprite_frames = SubResource("SpriteFrames_ugatd")
 animation = &"2"
 
 [node name="Growth" parent="." index="3"]
-tick_time = 600
+tick_time = 300
 initial_quantity = 1
 max_quantity = 2

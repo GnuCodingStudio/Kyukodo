@@ -13,6 +13,7 @@ extends StaticBody2D
 func _ready() -> void:
 	information_panel.hide()
 	_display_action_key()
+	%Collectable.set_collectable(growth.quantity > 0)
 
 #endregion built-in
 
