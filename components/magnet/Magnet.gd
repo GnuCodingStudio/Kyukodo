@@ -2,12 +2,12 @@ class_name Magnet
 extends Node2D
 
 
-@export var mangnet_speed: float = 80
+@export var magnet_speed: float = 1700
 @export_flags_2d_physics var collision_mask: int
 
-signal on_gathering(body: Node2D)
+signal on_gathering(body: RigidBody2D)
 
-var _magneted_bodies : Array[Node2D]
+var _magneted_bodies : Array[RigidBody2D]
 
 @onready var magnet_area: Area2D = %MagnetArea
 @onready var gather_area: Area2D = %GatherArea
@@ -20,9 +20,10 @@ func _ready() -> void:
 	gather_area.collision_mask = collision_mask
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	for magneted in _magneted_bodies:
-		magneted.global_position = magneted.global_position.move_toward(global_position, delta * mangnet_speed)
+		var direction = global_position - magneted.global_position
+		magneted.apply_central_force(direction.normalized() * magnet_speed)
 
 #endregion built-in
 
