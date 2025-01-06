@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/house/House.gd" id="1_mdmoh"]
 [ext_resource type="TileSet" uid="uid://r3u42lhdnu0w" path="res://scenes/levels/Planet.tres" id="1_pbe7r"]
-[ext_resource type="Script" path="res://components/clickable/Clickable.gd" id="4_3s0au"]
+[ext_resource type="PackedScene" uid="uid://disjjplik7m85" path="res://components/clickable/Clickable.tscn" id="3_bx5s1"]
 [ext_resource type="Texture2D" uid="uid://mm18f3omrlde" path="res://assets/image/roguelike.png" id="4_civ8t"]
 [ext_resource type="Texture2D" uid="uid://bnw13q6vl2i54" path="res://objects/item/stone/StaticStone.tres" id="5_gyv3y"]
 [ext_resource type="Texture2D" uid="uid://d38gxhmy201f" path="res://objects/item/gold/StaticGold.tres" id="6_ygxl8"]
@@ -48,13 +48,11 @@ unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAAAAEAAwAHAAkAAAAAAAgAAwAHAAsAAAAFAAgAAwAJAAsAAAAAAAcAAwAHAAoAAAAAAAYAAwAHAAoAAAAAAAUAAwAHAAoAAAAAAAQAAwAHAAoAAAAAAAMAAwAHAAoAAAAAAAIAAwAHAAoAAAABAAEAAwAIAAkAAAACAAEAAwAIAAkAAAADAAEAAwAIAAkAAAAEAAEAAwAIAAkAAAAFAAEAAwAJAAkAAAAFAAIAAwAJAAoAAAAFAAMAAwAJAAoAAAAFAAQAAwAJAAoAAAAFAAUAAwAJAAoAAAAFAAYAAwAJAAoAAAAFAAcAAwAJAAoAAAABAAgAAwAIAAsAAAACAAgAAwAIAAsAAAADAAgAAwAIAAsAAAAEAAgAAwAIAAsAAAAEAAcAAwAIAAoAAAADAAcAAwAIAAoAAAACAAcAAwAIAAoAAAABAAcAAwAIAAoAAAABAAYAAwAIAAoAAAABAAUAAwAIAAoAAAABAAQAAwAIAAoAAAABAAMAAwAIAAoAAAABAAIAAwAIAAoAAAACAAIAAwAIAAoAAAADAAIAAwAIAAoAAAAEAAIAAwAIAAoAAAAEAAMAAwAIAAoAAAADAAMAAwAIAAoAAAADAAQAAwAIAAoAAAADAAUAAwAIAAoAAAACAAUAAwAIAAoAAAACAAQAAwAIAAoAAAACAAMAAwAIAAoAAAACAAYAAwAIAAoAAAADAAYAAwAIAAoAAAAEAAYAAwAIAAoAAAAEAAUAAwAIAAoAAAAEAAQAAwAIAAoAAAA=")
 tile_set = ExtResource("1_pbe7r")
 
-[node name="Clickable" type="Node" parent="Level0" node_paths=PackedStringArray("clickable_area")]
-script = ExtResource("4_3s0au")
-clickable_area = NodePath("../ClickableArea")
+[node name="Clickable" parent="Level0" instance=ExtResource("3_bx5s1")]
 
-[node name="ClickableArea" type="Area2D" parent="Level0"]
+[node name="ClickableArea" type="Area2D" parent="Level0/Clickable"]
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Level0/ClickableArea"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Level0/Clickable/ClickableArea"]
 position = Vector2(48, 80)
 shape = SubResource("RectangleShape2D_tqc0n")
 
@@ -64,31 +62,25 @@ visible = false
 tile_map_data = PackedByteArray("AAABAAEAAwAuAAoAAAABAAIAAwAuAAsAAAACAAEAAwAvAAoAAAACAAIAAwAvAAsAAAAEAAQAAwAuAAoAAAAEAAUAAwAuAAsAAAAFAAQAAwAvAAoAAAAFAAUAAwAvAAsAAAAAAAYAAwAuAAoAAAAAAAcAAwAuAAsAAAABAAYAAwAvAAoAAAABAAcAAwAvAAsAAAAAAAgAAwAHAAsAAAABAAgAAwAIAAsAAAACAAgAAwAIAAsAAAADAAgAAwAJAAsAAAACAAcAAwAHAAoAAAACAAYAAwAHAAoAAAACAAUAAwAFAAoAAAACAAQAAwAJAAoAAAACAAMAAwAJAAoAAAABAAMAAwAHAAoAAAAFAAYAAwAJAAsAAAAEAAYAAwAGAAoAAAADAAYAAwAFAAoAAAADAAcAAwAFAAkAAAABAAUAAwAHAAsAAAABAAQAAwAHAAoAAAADAAUAAwAJAAkAAAAEAAcAAwAJAAsAAAA=")
 tile_set = ExtResource("1_pbe7r")
 
-[node name="Clickable" type="Node" parent="Level1" node_paths=PackedStringArray("clickable_area")]
-script = ExtResource("4_3s0au")
-clickable_area = NodePath("../ClickableArea")
+[node name="Clickable" parent="Level1" instance=ExtResource("3_bx5s1")]
 
-[node name="ClickableArea" type="Area2D" parent="Level1"]
+[node name="ClickableArea" type="Area2D" parent="Level1/Clickable"]
 
-[node name="CollisionShape1" type="CollisionShape2D" parent="Level1/ClickableArea"]
+[node name="CollisionShape1" type="CollisionShape2D" parent="Level1/Clickable/ClickableArea"]
 position = Vector2(32.5, 32)
 shape = SubResource("RectangleShape2D_y8p8w")
 
-[node name="CollisionShape2" type="CollisionShape2D" parent="Level1/ClickableArea"]
+[node name="CollisionShape2" type="CollisionShape2D" parent="Level1/Clickable/ClickableArea"]
 position = Vector2(80.5, 80)
 shape = SubResource("RectangleShape2D_g2yel")
 
-[node name="CollisionShape3" type="CollisionShape2D" parent="Level1/ClickableArea"]
+[node name="CollisionShape3" type="CollisionShape2D" parent="Level1/Clickable/ClickableArea"]
 position = Vector2(16.5, 112)
 shape = SubResource("RectangleShape2D_ekxux")
 
 [node name="Level2" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
-
-[node name="Clickable" type="Node" parent="Level2" node_paths=PackedStringArray("clickable_area")]
-script = ExtResource("4_3s0au")
-clickable_area = NodePath("../ClickableArea")
 
 [node name="Floor" type="TileMapLayer" parent="Level2"]
 tile_map_data = PackedByteArray("AAAAAAUAAwAIABAAAAAAAAYAAwAIABEAAAABAAUAAwAIABAAAAABAAYAAwAGAA8AAAACAAUAAwAFABAAAAACAAYAAwAIABAAAAACAAcAAwAGAA8AAAACAAgAAwAHABAAAAACAAkAAwAHABEAAAADAAUAAwAIAA8AAAADAAYAAwAIABAAAAADAAcAAwAIABAAAAADAAgAAwAIABAAAAADAAkAAwAIABEAAAAFAAkAAwAIABEAAAAEAAkAAwAIABEAAAAFAAUAAwAIAA8AAAAEAAUAAwAIAA8AAAABAAcAAwAHABEAAAACAAIAAwAJAA8AAAACAAMAAwAJABAAAAACAAQAAwAJABAAAAD//wUAAwAHABAAAAD//wQAAwAHABAAAAD//wMAAwAHABAAAAD//wIAAwAHAA8AAAD//wYAAwAHABEAAAAGAAUAAwAJAA8AAAAGAAYAAwAJABAAAAAGAAcAAwAJABAAAAAGAAgAAwAJABAAAAAGAAkAAwAJABEAAAA=")
@@ -112,13 +104,15 @@ position = Vector2(75, 137.6)
 scale = Vector2(0.642857, 0.794643)
 texture = SubResource("AtlasTexture_ogxdv")
 
-[node name="ClickableArea" type="Area2D" parent="Level2"]
+[node name="Clickable" parent="Level2" instance=ExtResource("3_bx5s1")]
 
-[node name="CollisionShape1" type="CollisionShape2D" parent="Level2/ClickableArea"]
+[node name="ClickableArea" type="Area2D" parent="Level2/Clickable"]
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="Level2/Clickable/ClickableArea"]
 position = Vector2(16, 48)
 shape = SubResource("RectangleShape2D_1q34n")
 
-[node name="CollisionShape2" type="CollisionShape2D" parent="Level2/ClickableArea"]
+[node name="CollisionShape2" type="CollisionShape2D" parent="Level2/Clickable/ClickableArea"]
 position = Vector2(80, 112)
 shape = SubResource("RectangleShape2D_usewq")
 
@@ -229,8 +223,8 @@ text = "UPGRADE_BUTTON"
 
 [connection signal="click" from="Level0/Clickable" to="." method="on_house_click"]
 [connection signal="click" from="Level1/Clickable" to="." method="on_house_click"]
-[connection signal="mouse_entered" from="Level1/ClickableArea" to="." method="_on_level1_mouse_entered"]
-[connection signal="mouse_exited" from="Level1/ClickableArea" to="." method="_on_level1_mouse_exited"]
+[connection signal="mouse_entered" from="Level1/Clickable/ClickableArea" to="." method="_on_level1_mouse_entered"]
+[connection signal="mouse_exited" from="Level1/Clickable/ClickableArea" to="." method="_on_level1_mouse_exited"]
 [connection signal="click" from="Level2/Clickable" to="." method="on_house_click"]
 [connection signal="mouse_exited" from="UpgradeContainer" to="." method="_on_upgrade_container_mouse_exited"]
 [connection signal="pressed" from="UpgradeContainer/Margin/VBox/UpgradeButton" to="." method="_on_upgrade_pressed"]

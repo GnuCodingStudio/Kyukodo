@@ -1,8 +1,6 @@
 class_name Clickable
-extends Node
+extends Node2D
 
-
-@export var clickable_area: Area2D
 
 signal click
 
@@ -13,6 +11,13 @@ var _mouse_hover := false
 #region built-in
 
 func _ready() -> void:
+	var area_children = find_children("*", "Area2D")
+	if area_children.is_empty():
+		assert(false, "Clickable must contain Area2D as child")
+	if area_children.size() > 1:
+		assert(false, "Clickable must only contain ONE Area2D")
+
+	var clickable_area = area_children[0]
 	clickable_area.mouse_entered.connect(_mouse_entered)
 	clickable_area.mouse_exited.connect(_mouse_exited)
 
